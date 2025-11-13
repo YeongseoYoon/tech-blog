@@ -9,12 +9,14 @@ interface TableOfContentsProps {
 
 export default function TableOfContents({ headings }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          // 스크롤 애니메이션 중일 때는 activeId 변경 안 함
+          if (entry.isIntersecting && !isScrolling) {
             setActiveId(entry.target.id);
           }
         });
@@ -31,13 +33,19 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
     });
 
     return () => observer.disconnect();
-  }, [headings]);
+  }, [headings, isScrolling]);
 
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      setIsScrolling(true);
       setActiveId(id);
+      element.scrollIntoView({ behavior: "smooth" });
+
+      // 스크롤 애니메이션 완료 후 플래그 해제 (smooth scroll 시간: ~900ms)
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 900);
     }
   };
 
