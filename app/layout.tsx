@@ -31,10 +31,10 @@ export default function RootLayout({
                   홈
                 </a>
                 <a
-                  href="/#tags"
+                  href="/about"
                   className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium"
                 >
-                  태그
+                  About
                 </a>
               </div>
             </div>
