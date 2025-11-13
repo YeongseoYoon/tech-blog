@@ -237,3 +237,17 @@ body {
 .giscus-frame {
   color-scheme: light dark;
 }
+
+/* 타이핑 애니메이션 커서 깜빡임 */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.typing-cursor {
+  animation: blink 1s ease-in-out infinite;
+}

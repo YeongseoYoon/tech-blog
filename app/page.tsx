@@ -7,6 +7,7 @@ import SearchBar from "@/components/SearchBar";
 import TagFilter from "@/components/TagFilter";
 import PostCard from "@/components/PostCard";
 import FeaturedPosts from "@/components/FeaturedPosts";
+import TypingAnimation from "@/components/TypingAnimation";
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -54,6 +55,15 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* 메인 컨텐츠 영역 */}
         <div className="lg:col-span-8">
+          {/* 타이핑 애니메이션 */}
+          <div className="mb-6">
+            <TypingAnimation
+              text="안녕하세요 프론트엔드 개발자 윤영서입니다."
+              speed={100}
+              className="text-2xl font-medium"
+            />
+          </div>
+
           {/* 검색바 */}
           <div className="mb-8">
             <SearchBar
