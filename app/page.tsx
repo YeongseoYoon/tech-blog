@@ -6,6 +6,7 @@ import { searchAndFilter, getAllTags } from '@/lib/search';
 import SearchBar from '@/components/SearchBar';
 import TagFilter from '@/components/TagFilter';
 import PostCard from '@/components/PostCard';
+import FeaturedPosts from '@/components/FeaturedPosts';
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -99,13 +100,7 @@ export default function Home() {
         {/* 사이드바 */}
         <aside className="lg:col-span-4">
           <div className="sticky top-24 space-y-8">
-            {/* 인기 글 섹션 (추후 구현 가능) */}
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide">
-                인기있는 글
-              </h3>
-              <p className="text-sm text-gray-500">준비 중입니다.</p>
-            </div>
+            <FeaturedPosts posts={posts} />
           </div>
         </aside>
       </div>

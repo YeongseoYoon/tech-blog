@@ -14,6 +14,7 @@ export interface PostMetadata {
   date: string;
   summary: string;
   tags: string[];
+  featured?: boolean;
   slug?: string;
 }
 
@@ -66,6 +67,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       date: data.date || '',
       summary: data.summary || '',
       tags: data.tags || [],
+      featured: data.featured || false,
       content,
       html,
       headings,

@@ -1,8 +1,9 @@
 ---
-title: 'Async/Await로 비동기 처리 마스터하기'
-date: '2025-02-15T10:20:15.123Z'
-summary: '현대적인 비동기 프로그래밍 패턴'
-tags: ['JavaScript', 'async']
+title: "Async/Await로 비동기 처리 마스터하기"
+date: "2025-02-15T10:20:15.123Z"
+summary: "현대적인 비동기 프로그래밍 패턴"
+tags: ["JavaScript", "async"]
+featured: true
 ---
 
 # Async/Await 완벽 가이드
@@ -39,7 +40,7 @@ async function getUser(userId) {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('에러 발생:', error);
+    console.error("에러 발생:", error);
   }
 }
 ```
@@ -76,10 +77,10 @@ async function parallelOperations() {
 async function safeFetch(url) {
   try {
     const response = await fetch(url);
-    if (!response.ok) throw new Error('Network response was not ok');
+    if (!response.ok) throw new Error("Network response was not ok");
     return await response.json();
   } catch (error) {
-    console.error('오류:', error);
+    console.error("오류:", error);
   }
 }
 ```
@@ -87,4 +88,3 @@ async function safeFetch(url) {
 ## 결론
 
 Async/Await는 자바스크립트 비동기 프로그래밍의 표준입니다.
-
