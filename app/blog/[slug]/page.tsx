@@ -92,9 +92,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
           {/* Giscus 댓글 */}
           <Giscus
-            repo="your-username/your-repo"
-            repoId="your-repo-id"
-            categoryId="your-category-id"
+            repo={process.env.NEXT_PUBLIC_GISCUS_REPO || ""}
+            repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID || ""}
+            categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID || ""}
             theme="light"
             lang="ko"
           />

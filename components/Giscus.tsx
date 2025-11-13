@@ -52,6 +52,12 @@ export default function Giscus({
   }, []);
 
   useEffect(() => {
+    // 환경 변수가 없으면 Giscus를 로드하지 않음
+    if (!repo || !repoId || !categoryId) {
+      console.warn('Giscus 환경 변수가 설정되지 않았습니다.');
+      return;
+    }
+
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
     script.async = true;
@@ -81,6 +87,11 @@ export default function Giscus({
         const iframe = container.querySelector('iframe');
         if (iframe) {
           iframe.remove();
+        }
+        // 스크립트도 제거
+        const existingScript = container.querySelector('script[src="https://giscus.app/client.js"]');
+        if (existingScript) {
+          existingScript.remove();
         }
       }
     };
