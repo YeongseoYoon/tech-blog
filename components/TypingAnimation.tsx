@@ -38,7 +38,6 @@ export default function TypingAnimation({
 
       return () => clearTimeout(timeout);
     } else if (isDeleting && displayedText.length > 0) {
-      // 삭제 중
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev.slice(0, -1));
       }, deleteSpeed);
