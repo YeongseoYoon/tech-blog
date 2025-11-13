@@ -73,11 +73,14 @@ export default function Home() {
 
       {/* 포스트 목록 */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          {selectedTags.length > 0 || searchQuery
-            ? `검색 결과: ${filteredPosts.length}개`
-            : `최신 글: ${filteredPosts.length}개`}
-        </h2>
+        <div className="flex items-center gap-3 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900">
+            {selectedTags.length > 0 || searchQuery ? '검색 결과' : '최신 글'}
+          </h2>
+          <span className="inline-flex items-center justify-center bg-blue-600 text-white rounded-full px-3 py-1 text-sm font-semibold">
+            {filteredPosts.length}
+          </span>
+        </div>
 
         {filteredPosts.length === 0 ? (
           <div className="text-center py-12 text-gray-500">
