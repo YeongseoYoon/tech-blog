@@ -14,18 +14,24 @@ export default function PostCard({ post }: PostCardProps) {
 
   return (
     <Link href={`/blog/${post.slug}`}>
-      <article className="post-card">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition">
-          {post.title}
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">{formattedDate}</p>
-        <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">{post.summary}</p>
-        <div className="flex flex-wrap gap-2">
-          {post.tags.map((tag) => (
-            <span key={tag} className="tag">
-              #{tag}
-            </span>
-          ))}
+      <article className="group border-b border-gray-100 pb-8 last:border-b-0 hover:border-gray-200 transition-colors">
+        <div className="flex items-start gap-4">
+          <div className="flex-1">
+            <h2 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+              {post.title}
+            </h2>
+            <p className="text-sm text-gray-500 mb-3">{formattedDate}</p>
+            <p className="text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+              {post.summary}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span key={tag} className="tag">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </article>
     </Link>

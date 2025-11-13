@@ -23,7 +23,7 @@ export default function TagFilter({
     <div className="mb-8" id="tags">
       <div className="flex flex-wrap gap-2">
         {tags.length === 0 ? (
-          <p className="text-gray-500 dark:text-gray-400">태그가 없습니다.</p>
+          <p className="text-gray-500">태그가 없습니다.</p>
         ) : (
           tags.map((tag) => (
             <button
@@ -41,10 +41,10 @@ export default function TagFilter({
       {selectedTags.length > 0 && (
         <button
           onClick={() => onTagChange([])}
-          className="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 group"
+          className="mt-4 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-500 hover:text-gray-700 border border-gray-200 rounded-md hover:border-gray-300 hover:bg-gray-50 transition-all duration-200 group"
         >
           <svg
-            className="w-4 h-4 group-hover:rotate-90 transition-transform duration-200"
+            className="w-3.5 h-3.5 group-hover:rotate-90 transition-transform duration-200"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

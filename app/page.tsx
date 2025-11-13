@@ -42,57 +42,72 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="text-center text-gray-600 dark:text-gray-400">로딩 중...</div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div className="text-center text-gray-500">로딩 중...</div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">기술 블로그에 오신 것을 환영합니다!</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          개발 경험과 기술 지식을 공유하는 블로그입니다.
-        </p>
-      </div>
+    <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* 메인 컨텐츠 영역 */}
+        <div className="lg:col-span-8">
+          {/* 검색바 */}
+          <div className="mb-8">
+            <SearchBar
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="제목, 요약, 내용으로 검색..."
+            />
+          </div>
 
-      {/* 검색바 */}
-      <SearchBar
-        value={searchQuery}
-        onChange={setSearchQuery}
-        placeholder="제목, 요약, 내용으로 검색..."
-      />
+          {/* 태그 필터 */}
+          <div className="mb-10">
+            <TagFilter
+              tags={allTags}
+              selectedTags={selectedTags}
+              onTagChange={setSelectedTags}
+            />
+          </div>
 
-      {/* 태그 필터 */}
-      <TagFilter
-        tags={allTags}
-        selectedTags={selectedTags}
-        onTagChange={setSelectedTags}
-      />
+          {/* 포스트 목록 */}
+          <div>
+            <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-100">
+              <h2 className="text-xl font-semibold text-gray-900">
+                {selectedTags.length > 0 || searchQuery ? '검색 결과' : '최신 글'}
+              </h2>
+              <span className="text-sm text-gray-500 font-medium">
+                {filteredPosts.length}개
+              </span>
+            </div>
 
-      {/* 포스트 목록 */}
-      <div>
-        <div className="flex items-center gap-3 mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-            {selectedTags.length > 0 || searchQuery ? '검색 결과' : '최신 글'}
-          </h2>
-          <span className="inline-flex items-center justify-center bg-blue-600 dark:bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold">
-            {filteredPosts.length}
-          </span>
+            {filteredPosts.length === 0 ? (
+              <div className="text-center py-20">
+                <p className="text-gray-500">검색 결과가 없습니다.</p>
+              </div>
+            ) : (
+              <div className="space-y-6">
+                {filteredPosts.map((post) => (
+                  <PostCard key={post.slug} post={post} />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
-        {filteredPosts.length === 0 ? (
-          <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-            <p>검색 결과가 없습니다.</p>
+        {/* 사이드바 */}
+        <aside className="lg:col-span-4">
+          <div className="sticky top-24 space-y-8">
+            {/* 인기 글 섹션 (추후 구현 가능) */}
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide">
+                인기있는 글
+              </h3>
+              <p className="text-sm text-gray-500">준비 중입니다.</p>
+            </div>
           </div>
-        ) : (
-          <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2">
-            {filteredPosts.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
-          </div>
-        )}
+        </aside>
       </div>
     </div>
   );
