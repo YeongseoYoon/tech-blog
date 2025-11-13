@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "기술 블로그",
+  title: "yeongseo-blog",
   description: "개발자의 기술 블로그",
 };
 
@@ -21,7 +21,7 @@ export default function RootLayout({
                 href="/"
                 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
               >
-                기술 블로그
+                yeongseo-blog
               </a>
               <div className="flex items-center gap-8">
                 <a
@@ -44,7 +44,7 @@ export default function RootLayout({
         <footer className="border-t border-gray-100 mt-20">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
             <div className="text-center text-sm text-gray-500">
-              <p>&copy; 2025 기술 블로그. All rights reserved.</p>
+              <p>&copy; 2025 yeongseo-blog. All rights reserved.</p>
             </div>
           </div>
         </footer>
