@@ -98,31 +98,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     // 실제 HTML에서 생성된 ID를 추출하여 목차 생성
     const headings = await extractHeadingsFromHtml(html);
 
-    // 디버깅: NonNullable<T> 같은 제목이 있는지 확인
-    if (slug === "make-utility-types") {
-      // NonNullable<T> 제목 찾기
-      const nonNullableMatch = html.match(/<h2[^>]*>.*?NonNullable.*?<\/h2>/);
-      if (nonNullableMatch) {
-        console.log("Found NonNullable heading in HTML:", nonNullableMatch[0]);
-        const extracted = headings.find((h) => h.text.includes("NonNullable"));
-        if (extracted) {
-          console.log("Extracted NonNullable heading:", extracted);
-        } else {
-          console.log(
-            "All extracted headings:",
-            headings.map((h) => ({ id: h.id, text: h.text }))
-          );
-        }
-      } else {
-        console.log("Could not find NonNullable heading in HTML");
-        // 모든 h2 태그 찾기
-        const allH2 = html.match(/<h2[^>]*>.*?<\/h2>/g);
-        if (allH2) {
-          console.log("All h2 tags:", allH2.slice(0, 5));
-        }
-      }
-    }
-
     return {
       slug,
       title: data.title || "",
@@ -135,7 +110,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       headings,
     };
   } catch (error) {
-    console.error(`Error loading post ${slug}:`, error);
     return null;
   }
 }
@@ -226,7 +200,6 @@ async function extractHeadingsFromHtml(html: string): Promise<Heading[]> {
 
     return headings;
   } catch (error) {
-    console.error("Error extracting headings from HTML:", error);
     // 에러 발생 시 빈 배열 반환
     return [];
   }

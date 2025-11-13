@@ -325,14 +325,6 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
         // 요소를 찾지 못하면 더 많이 재시도 (최대 15번, DOM 렌더링 대기)
         setTimeout(() => findAndScroll(attempts + 1), 200);
       } else {
-        console.warn(`Could not find element with id: ${id}`);
-        console.log(
-          "Available headings:",
-          Array.from(document.querySelectorAll("h1, h2, h3, h4")).map((h) => ({
-            id: h.id,
-            text: h.textContent,
-          }))
-        );
         setIsScrolling(false);
       }
     };

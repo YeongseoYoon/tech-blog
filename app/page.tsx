@@ -26,7 +26,7 @@ export default function Home() {
         setPosts(data);
         setAllTags(getAllTags(data));
       } catch (error) {
-        console.error('Error loading posts:', error);
+        // Error loading posts
       } finally {
         setIsLoading(false);
       }
