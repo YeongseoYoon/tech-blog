@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface GiscusProps {
   repo: string;
@@ -29,6 +29,28 @@ export default function Giscus({
   lang = 'ko',
   loading = 'lazy',
 }: GiscusProps) {
+  const [currentTheme, setCurrentTheme] = useState(theme);
+
+  useEffect(() => {
+    // 다크모드 감지
+    const updateTheme = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setCurrentTheme(isDark ? 'dark' : 'light');
+    };
+
+    // 초기 테마 설정
+    updateTheme();
+
+    // 다크모드 변경 감지
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
@@ -43,7 +65,7 @@ export default function Giscus({
     script.setAttribute('data-reactions-enabled', reactionsEnabled);
     script.setAttribute('data-emit-metadata', emitMetadata);
     script.setAttribute('data-input-position', inputPosition);
-    script.setAttribute('data-theme', theme);
+    script.setAttribute('data-theme', currentTheme);
     script.setAttribute('data-lang', lang);
     script.setAttribute('data-loading', loading);
 
@@ -62,12 +84,12 @@ export default function Giscus({
         }
       }
     };
-  }, [repo, repoId, categoryId, mapping, strict, reactionsEnabled, emitMetadata, inputPosition, theme, lang, loading]);
+  }, [repo, repoId, categoryId, mapping, strict, reactionsEnabled, emitMetadata, inputPosition, currentTheme, lang, loading]);
 
   return (
     <div
       id="giscus-container"
-      className="mt-12 pt-8 border-t border-gray-200"
+      className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700"
     />
   );
 }

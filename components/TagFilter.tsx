@@ -23,7 +23,7 @@ export default function TagFilter({
     <div className="mb-8" id="tags">
       <div className="flex flex-wrap gap-2">
         {tags.length === 0 ? (
-          <p className="text-gray-500">태그가 없습니다.</p>
+          <p className="text-gray-500 dark:text-gray-400">태그가 없습니다.</p>
         ) : (
           tags.map((tag) => (
             <button
@@ -41,7 +41,7 @@ export default function TagFilter({
       {selectedTags.length > 0 && (
         <button
           onClick={() => onTagChange([])}
-          className="mt-3 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition text-sm font-semibold"
+          className="mt-3 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition text-sm font-semibold"
         >
           필터 초기화
         </button>

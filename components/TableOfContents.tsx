@@ -55,7 +55,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
 
   return (
     <div className="toc">
-      <h3 className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">
+      <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">
         목차
       </h3>
       <ul className="space-y-0">

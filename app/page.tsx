@@ -43,7 +43,7 @@ export default function Home() {
   if (isLoading) {
     return (
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="text-center text-gray-600">로딩 중...</div>
+        <div className="text-center text-gray-600 dark:text-gray-400">로딩 중...</div>
       </div>
     );
   }
@@ -51,8 +51,8 @@ export default function Home() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">기술 블로그에 오신 것을 환영합니다!</h1>
-        <p className="text-lg text-gray-600">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">기술 블로그에 오신 것을 환영합니다!</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400">
           개발 경험과 기술 지식을 공유하는 블로그입니다.
         </p>
       </div>
@@ -74,16 +74,16 @@ export default function Home() {
       {/* 포스트 목록 */}
       <div>
         <div className="flex items-center gap-3 mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
             {selectedTags.length > 0 || searchQuery ? '검색 결과' : '최신 글'}
           </h2>
-          <span className="inline-flex items-center justify-center bg-blue-600 text-white rounded-full px-3 py-1 text-sm font-semibold">
+          <span className="inline-flex items-center justify-center bg-blue-600 dark:bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold">
             {filteredPosts.length}
           </span>
         </div>
 
         {filteredPosts.length === 0 ? (
-          <div className="text-center py-12 text-gray-500">
+          <div className="text-center py-12 text-gray-500 dark:text-gray-400">
             <p>검색 결과가 없습니다.</p>
           </div>
         ) : (
