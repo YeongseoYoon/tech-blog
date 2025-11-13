@@ -4,6 +4,29 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "yeongseo-blog",
   description: "개발자의 기술 블로그",
+  icons: {
+    icon: [
+      {
+        url: "/static/favicons/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/static/favicons/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      { url: "/static/favicons/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      {
+        url: "/static/favicons/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+  manifest: "/static/favicons/site.webmanifest",
 };
 
 export default function RootLayout({
