@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -42,8 +43,15 @@ export default function RootLayout({
             <div className="flex items-center justify-between h-16">
               <a
                 href="/"
-                className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
               >
+                <Image
+                  src="/static/images/logo.png"
+                  alt="yeongseo-blog logo"
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                />
                 yeongseo-blog
               </a>
               <div className="flex items-center gap-8">
