@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Post, getAllPostSlugs, getPostBySlug } from '@/lib/mdParser';
+import { Post, getAllPostSlugs, getPostBySlug, getAllPosts } from '@/lib/mdParser';
 import TableOfContents from '@/components/TableOfContents';
 import Giscus from '@/components/Giscus';
 import CodeCopyHandler from '@/components/CodeCopyHandler';
 import ReadingProgress from '@/components/ReadingProgress';
+import PostNavigation from '@/components/PostNavigation';
 
 interface BlogPageProps {
   params: Promise<{
@@ -42,6 +43,13 @@ export default async function BlogPage({ params }: BlogPageProps) {
   if (!post) {
     notFound();
   }
+
+  // 모든 포스트를 가져와서 이전/다음 글 찾기
+  const allPosts = await getAllPosts();
+  const currentIndex = allPosts.findIndex((p) => p.slug === slug);
+  const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const nextPost =
+    currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
   const formattedDate = new Date(post.date).toLocaleDateString('ko-KR', {
     year: 'numeric',
@@ -98,6 +106,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
             theme="light"
             lang="ko"
           />
+
+          {/* 이전/다음 글 네비게이션 */}
+          <PostNavigation prevPost={prevPost} nextPost={nextPost} />
         </article>
 
         {/* 사이드바: 목차 */}
