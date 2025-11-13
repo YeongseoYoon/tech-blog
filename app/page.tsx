@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { Post } from '@/lib/mdParser';
-import { searchAndFilter, getAllTags } from '@/lib/search';
-import SearchBar from '@/components/SearchBar';
-import TagFilter from '@/components/TagFilter';
-import PostCard from '@/components/PostCard';
-import FeaturedPosts from '@/components/FeaturedPosts';
+import { useEffect, useState } from "react";
+import { Post } from "@/lib/mdParser";
+import { searchAndFilter, getAllTags } from "@/lib/search";
+import SearchBar from "@/components/SearchBar";
+import TagFilter from "@/components/TagFilter";
+import PostCard from "@/components/PostCard";
+import FeaturedPosts from "@/components/FeaturedPosts";
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [allTags, setAllTags] = useState<string[]>([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,8 +20,8 @@ export default function Home() {
   useEffect(() => {
     const loadPosts = async () => {
       try {
-        const response = await fetch('/api/posts');
-        if (!response.ok) throw new Error('Failed to fetch posts');
+        const response = await fetch("/api/posts");
+        if (!response.ok) throw new Error("Failed to fetch posts");
         const data = await response.json();
         setPosts(data);
         setAllTags(getAllTags(data));
@@ -76,7 +76,9 @@ export default function Home() {
           <div>
             <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-100">
               <h2 className="text-xl font-semibold text-gray-900">
-                {selectedTags.length > 0 || searchQuery ? '검색 결과' : '최신 글'}
+                {selectedTags.length > 0 || searchQuery
+                  ? "검색 결과"
+                  : "최신 글"}
               </h2>
               <span className="text-sm text-gray-500 font-medium">
                 {filteredPosts.length}개
@@ -107,4 +109,3 @@ export default function Home() {
     </div>
   );
 }
-
