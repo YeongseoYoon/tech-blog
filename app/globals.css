@@ -92,8 +92,27 @@ body {
   background-color: #282c34 !important;
 }
 
-.prose code {
-  @apply text-sm;
+/* 인라인 코드 (백틱으로 감싼 부분) */
+.prose code:not(pre code) {
+  @apply text-sm text-blue-600 dark:text-blue-400;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* 코드 블록 내부 코드는 기본 스타일 유지 */
+.prose pre code {
+  @apply block p-4;
+  color: inherit !important;
+  background: transparent !important;
+}
+
+.prose img {
+  @apply w-full rounded-lg my-6 shadow-md;
+  max-width: 100%;
+  height: auto;
+}
+
+.prose img + img {
+  @apply mt-4;
 }
 
 .code-block-container {
@@ -116,12 +135,6 @@ body {
 
 .copy-code-btn.copied {
   @apply bg-green-500 border-green-500 text-white;
-}
-
-.prose pre code {
-  @apply block p-4;
-  color: inherit !important;
-  background: transparent !important;
 }
 
 .prose h1 {
