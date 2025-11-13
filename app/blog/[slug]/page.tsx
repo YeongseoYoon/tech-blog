@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Post, getAllPostSlugs, getPostBySlug, getAllPosts } from '@/lib/mdParser';
 import TableOfContents from '@/components/TableOfContents';
+import MobileTableOfContents from '@/components/MobileTableOfContents';
 import Giscus from '@/components/Giscus';
 import CodeCopyHandler from '@/components/CodeCopyHandler';
 import ReadingProgress from '@/components/ReadingProgress';
@@ -92,6 +93,11 @@ export default async function BlogPage({ params }: BlogPageProps) {
             <p className="text-lg text-gray-700 dark:text-gray-300 italic">{post.summary}</p>
           </header>
 
+          {/* 모바일 목차 (플로팅 버튼) */}
+          {post.headings.length > 0 && (
+            <MobileTableOfContents headings={post.headings} />
+          )}
+
           {/* 포스트 내용 */}
           <div
             className="prose prose-lg max-w-none dark:prose-invert"
@@ -111,9 +117,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
           <PostNavigation prevPost={prevPost} nextPost={nextPost} />
         </article>
 
-        {/* 사이드바: 목차 */}
+        {/* 사이드바: 목차 (데스크톱만 표시) */}
         {post.headings.length > 0 && (
-          <aside className="lg:col-span-1">
+          <aside className="hidden lg:block lg:col-span-1">
             <TableOfContents headings={post.headings} />
           </aside>
         )}
