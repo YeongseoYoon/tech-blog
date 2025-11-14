@@ -13,7 +13,10 @@ interface PostListProps {
   allTags: string[];
 }
 
-export default function PostList({ posts: initialPosts, allTags: initialTags }: PostListProps) {
+export default function PostList({
+  posts: initialPosts,
+  allTags: initialTags,
+}: PostListProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<Post[]>(initialPosts);
@@ -27,7 +30,7 @@ export default function PostList({ posts: initialPosts, allTags: initialTags }: 
   return (
     <>
       {/* 타이핑 애니메이션 */}
-      <div className="mb-6">
+      <div className="mb-6 min-h-[4rem] flex items-center">
         <TypingAnimation
           text="안녕하세요 프론트엔드 개발자 윤영서입니다."
           speed={100}
@@ -57,9 +60,7 @@ export default function PostList({ posts: initialPosts, allTags: initialTags }: 
       <div>
         <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-100">
           <h2 className="text-xl font-semibold text-gray-900">
-            {selectedTags.length > 0 || searchQuery
-              ? "검색 결과"
-              : "최신 글"}
+            {selectedTags.length > 0 || searchQuery ? "검색 결과" : "최신 글"}
           </h2>
           <span className="text-sm text-gray-500 font-medium">
             {filteredPosts.length}개
@@ -81,4 +82,3 @@ export default function PostList({ posts: initialPosts, allTags: initialTags }: 
     </>
   );
 }
-
