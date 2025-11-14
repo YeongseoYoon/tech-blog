@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "yeongseo-blog",
-  description: "개발자의 기술 블로그",
+  description: "윤영서 기술 블로그",
   icons: {
     icon: [
       {
