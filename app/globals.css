@@ -95,7 +95,8 @@ body {
 /* 인라인 코드 (백틱으로 감싼 부분) */
 .prose code:not(pre code) {
   @apply text-sm text-blue-600 dark:text-blue-400;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
 }
 
 /* 코드 블록 내부 코드는 기본 스타일 유지 */
@@ -106,7 +107,7 @@ body {
 }
 
 .prose img {
-  @apply w-full rounded-lg my-6 shadow-md;
+  @apply rounded-lg my-6 shadow-md;
   max-width: 100%;
   height: auto;
 }
@@ -240,10 +241,12 @@ body {
 
 /* 타이핑 애니메이션 커서 깜빡임 */
 @keyframes blink {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
   }
-  51%, 100% {
+  51%,
+  100% {
     opacity: 0;
   }
 }
