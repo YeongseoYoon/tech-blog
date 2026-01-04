@@ -1,9 +1,9 @@
+/* Highlight.js 테마 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Highlight.js 테마 */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css");
 
 /* Highlight.js 커스텀 스타일 */
 .hljs {
