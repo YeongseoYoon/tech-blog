@@ -116,6 +116,26 @@ body {
   @apply mt-4;
 }
 
+/* figure 그리드 레이아웃 */
+.prose .figure-grid {
+  @apply flex gap-6 flex-wrap justify-center my-8;
+}
+
+.prose .figure-grid figure {
+  @apply flex flex-col items-center;
+  margin: 0;
+  flex: 0 1 auto;
+}
+
+.prose .figure-grid figure img {
+  margin: 0;
+}
+
+.prose .figure-grid figcaption {
+  @apply mt-2 text-sm text-center text-gray-600 dark:text-gray-400;
+  max-width: 400px;
+}
+
 .code-block-container {
   @apply relative;
 }
