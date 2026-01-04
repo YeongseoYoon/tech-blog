@@ -1,6 +1,7 @@
 ---
 title: "프론트엔드 개발자 2년 차, 변화를 선택한 2025년 회고"
 date: "2026-01-03T11:41:07.003Z"
+featured: true
 summary: "뭐했드라"
 tags: ["MEMOIR"]
 ---
