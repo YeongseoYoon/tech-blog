@@ -28,6 +28,13 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/static/favicons/site.webmanifest",
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        { url: '/feed.xml', title: 'yeongseo-blog RSS Feed' }
+      ],
+    },
+  },
 };
 
 export default function RootLayout({
