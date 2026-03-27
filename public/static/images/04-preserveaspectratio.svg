@@ -1,0 +1,43 @@
+<svg width="620" height="240" xmlns="http://www.w3.org/2000/svg" style="background:#1a1a2e; border-radius:12px;">
+  <!-- Title -->
+  <text x="310" y="22" fill="#e0e0e0" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">preserveAspectRatio — viewBox 200×200을 400×200 뷰포트에 맞출 때</text>
+
+  <!-- meet (contain) -->
+  <text x="100" y="52" fill="#7fdbca" font-size="11" font-family="monospace" text-anchor="middle">meet (contain)</text>
+  <rect x="5" y="60" width="190" height="95" fill="none" stroke="#4a4a7a" stroke-width="1" stroke-dasharray="3,3"/>
+  <svg x="5" y="60" width="190" height="95" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+    <rect x="0" y="0" width="200" height="200" fill="#0d0d1a"/>
+    <circle cx="100" cy="100" r="60" fill="#6c5ce7" fill-opacity="0.8"/>
+    <rect x="40" y="40" width="50" height="50" fill="#fd79a8" fill-opacity="0.8" rx="4"/>
+    <rect x="120" y="110" width="50" height="50" fill="#ffeaa7" fill-opacity="0.8" rx="4"/>
+  </svg>
+  <text x="100" y="175" fill="#888" font-size="8" font-family="monospace" text-anchor="middle">전체 보임, 양쪽 여백</text>
+  <text x="100" y="188" fill="#7fdbca" font-size="9" font-family="monospace" text-anchor="middle">= object-fit: contain</text>
+
+  <!-- slice (cover) -->
+  <text x="310" y="52" fill="#fc8eac" font-size="11" font-family="monospace" text-anchor="middle">slice (cover)</text>
+  <rect x="215" y="60" width="190" height="95" fill="none" stroke="#4a4a7a" stroke-width="1" stroke-dasharray="3,3"/>
+  <svg x="215" y="60" width="190" height="95" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+    <rect x="0" y="0" width="200" height="200" fill="#0d0d1a"/>
+    <circle cx="100" cy="100" r="60" fill="#6c5ce7" fill-opacity="0.8"/>
+    <rect x="40" y="40" width="50" height="50" fill="#fd79a8" fill-opacity="0.8" rx="4"/>
+    <rect x="120" y="110" width="50" height="50" fill="#ffeaa7" fill-opacity="0.8" rx="4"/>
+  </svg>
+  <text x="310" y="175" fill="#888" font-size="8" font-family="monospace" text-anchor="middle">꽉 채움, 위아래 잘림</text>
+  <text x="310" y="188" fill="#fc8eac" font-size="9" font-family="monospace" text-anchor="middle">= object-fit: cover</text>
+
+  <!-- none (fill / stretch) -->
+  <text x="520" y="52" fill="#ffeaa7" font-size="11" font-family="monospace" text-anchor="middle">none (fill)</text>
+  <rect x="425" y="60" width="190" height="95" fill="none" stroke="#4a4a7a" stroke-width="1" stroke-dasharray="3,3"/>
+  <svg x="425" y="60" width="190" height="95" viewBox="0 0 200 200" preserveAspectRatio="none">
+    <rect x="0" y="0" width="200" height="200" fill="#0d0d1a"/>
+    <circle cx="100" cy="100" r="60" fill="#6c5ce7" fill-opacity="0.8"/>
+    <rect x="40" y="40" width="50" height="50" fill="#fd79a8" fill-opacity="0.8" rx="4"/>
+    <rect x="120" y="110" width="50" height="50" fill="#ffeaa7" fill-opacity="0.8" rx="4"/>
+  </svg>
+  <text x="520" y="175" fill="#888" font-size="8" font-family="monospace" text-anchor="middle">비율 무시, 찌그러짐</text>
+  <text x="520" y="188" fill="#ffeaa7" font-size="9" font-family="monospace" text-anchor="middle">= object-fit: fill</text>
+
+  <!-- Bottom note -->
+  <text x="310" y="225" fill="#666" font-size="9" font-family="monospace" text-anchor="middle">동일한 viewBox="0 0 200 200" 콘텐츠를 가로로 긴 뷰포트에 넣었을 때</text>
+</svg>

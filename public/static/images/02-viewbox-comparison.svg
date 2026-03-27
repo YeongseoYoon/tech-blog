@@ -1,0 +1,38 @@
+<svg width="620" height="280" xmlns="http://www.w3.org/2000/svg" style="background:#1a1a2e; border-radius:12px;">
+  <!-- Panel 1: no viewBox -->
+  <text x="100" y="25" fill="#e0e0e0" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">viewBox 없음</text>
+  <text x="100" y="40" fill="#888" font-size="9" font-family="monospace" text-anchor="middle">width="200" height="200"</text>
+
+  <rect x="5" y="50" width="190" height="190" fill="none" stroke="#4a4a7a" stroke-width="1" stroke-dasharray="4,4"/>
+  <svg x="5" y="50" width="190" height="190">
+    <rect x="0" y="0" width="190" height="190" fill="#0d0d1a" rx="4"/>
+    <rect x="20" y="20" width="60" height="60" fill="#6c5ce7" rx="4"/>
+    <circle cx="140" cy="100" r="30" fill="#fd79a8"/>
+    <text x="28" y="55" fill="white" font-size="10" font-family="monospace">60×60</text>
+    <text x="124" y="105" fill="white" font-size="10" font-family="monospace">r=30</text>
+  </svg>
+
+  <!-- Panel 2: viewBox="0 0 100 100" (2x zoom) -->
+  <text x="320" y="25" fill="#e0e0e0" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">viewBox="0 0 100 100"</text>
+  <text x="320" y="40" fill="#7fdbca" font-size="9" font-family="monospace" text-anchor="middle">같은 200px인데 내부 좌표가 100×100 → 2배 확대</text>
+
+  <rect x="215" y="50" width="190" height="190" fill="none" stroke="#7fdbca" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <svg x="215" y="50" width="190" height="190" viewBox="0 0 100 100">
+    <rect x="0" y="0" width="100" height="100" fill="#0d0d1a" rx="2"/>
+    <rect x="20" y="20" width="60" height="60" fill="#6c5ce7" rx="2"/>
+    <circle cx="70" cy="50" r="30" fill="#fd79a8"/>
+    <text x="25" y="55" fill="white" font-size="5" font-family="monospace">60×60</text>
+    <text x="57" y="53" fill="white" font-size="5" font-family="monospace">r=30</text>
+  </svg>
+
+  <!-- Panel 3: viewBox="50 50 100 100" (camera pan) -->
+  <text x="520" y="25" fill="#e0e0e0" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">viewBox="50 50 100 100"</text>
+  <text x="520" y="40" fill="#ffeaa7" font-size="9" font-family="monospace" text-anchor="middle">(50,50)부터 보기 시작 → 카메라 이동</text>
+
+  <rect x="425" y="50" width="190" height="190" fill="none" stroke="#ffeaa7" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <svg x="425" y="50" width="190" height="190" viewBox="50 50 100 100">
+    <rect x="0" y="0" width="200" height="200" fill="#0d0d1a" rx="2"/>
+    <rect x="20" y="20" width="60" height="60" fill="#6c5ce7" rx="2"/>
+    <circle cx="140" cy="100" r="30" fill="#fd79a8"/>
+  </svg>
+</svg>
