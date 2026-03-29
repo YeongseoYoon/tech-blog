@@ -11,6 +11,21 @@ import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import remarkFrontmatter from "remark-frontmatter";
 import { slug } from "github-slugger";
+import { visit } from "unist-util-visit";
+import { processSvgInteractive } from "./svg-interactive";
+
+// remark plugin: preserve code fence meta string as data-meta attribute
+function remarkPreserveMeta() {
+  return (tree: any) => {
+    visit(tree, "code", (node: any) => {
+      if (node.meta) {
+        node.data = node.data || {};
+        node.data.hProperties = node.data.hProperties || {};
+        node.data.hProperties.dataMeta = node.meta;
+      }
+    });
+  };
+}
 
 export interface PostMetadata {
   title: string;
@@ -120,6 +135,7 @@ export async function markdownToHtml(markdown: string): Promise<string> {
     .use(remarkParse)
     .use(remarkFrontmatter)
     .use(remarkGfm) // GitHub Flavored Markdown 지원 (URL 자동 링크 변환 포함)
+    .use(remarkPreserveMeta)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeSlug) // 제목에 ID 자동 추가 (rehype 단계에서 실행)
@@ -153,6 +169,9 @@ export async function markdownToHtml(markdown: string): Promise<string> {
   // 테이블을 스크롤 가능한 wrapper로 감싸기 (모바일 대응)
   html = html.replace(/<table/g, '<div class="table-wrapper"><table');
   html = html.replace(/<\/table>/g, '</table></div>');
+
+  // SVG 인터랙티브 코드 블록 변환
+  html = processSvgInteractive(html);
 
   return html;
 }
