@@ -150,6 +150,10 @@ export async function markdownToHtml(markdown: string): Promise<string> {
     });
   }
 
+  // 테이블을 스크롤 가능한 wrapper로 감싸기 (모바일 대응)
+  html = html.replace(/<table/g, '<div class="table-wrapper"><table');
+  html = html.replace(/<\/table>/g, '</table></div>');
+
   return html;
 }
 
