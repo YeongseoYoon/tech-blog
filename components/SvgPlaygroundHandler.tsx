@@ -1,12 +1,25 @@
 'use client';
 
 import { useEffect } from 'react';
+import DOMPurify from 'dompurify';
 
 function sanitizeSvg(code: string): string {
-  let safe = code.replace(/<script[\s\S]*?<\/script>/gi, '');
-  safe = safe.replace(/\s+on\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]*)/gi, '');
-  safe = safe.replace(/javascript\s*:/gi, 'blocked:');
-  return safe;
+  return DOMPurify.sanitize(code, {
+    USE_PROFILES: { svg: true, svgFilters: true, html: true },
+    ADD_TAGS: ['style'],
+    ADD_ATTR: [
+      'preserveAspectRatio', 'viewBox', 'xmlns', 'xmlns:xlink',
+      'fill-opacity', 'stroke-linecap', 'stroke-linejoin',
+      'stroke-dasharray', 'dominant-baseline', 'text-anchor',
+      'marker-start', 'marker-mid', 'marker-end',
+    ],
+    FORBID_TAGS: [
+      'script', 'iframe', 'embed', 'object', 'foreignObject',
+      'animate', 'set', 'animateTransform',
+    ],
+    FORBID_ATTR: ['xlink:href'],
+    ALLOW_DATA_ATTR: false,
+  });
 }
 
 function escapeHtml(text: string): string {
