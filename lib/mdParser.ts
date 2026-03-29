@@ -13,6 +13,7 @@ import remarkFrontmatter from "remark-frontmatter";
 import { slug } from "github-slugger";
 import { visit } from "unist-util-visit";
 import { processSvgInteractive } from "./svg-interactive";
+import { processSvgPlayground } from "./svg-playground";
 
 // remark plugin: preserve code fence meta string as data-meta attribute
 function remarkPreserveMeta() {
@@ -172,6 +173,9 @@ export async function markdownToHtml(markdown: string): Promise<string> {
 
   // SVG 인터랙티브 코드 블록 변환
   html = processSvgInteractive(html);
+
+  // SVG 플레이그라운드 코드 블록 변환
+  html = processSvgPlayground(html);
 
   return html;
 }

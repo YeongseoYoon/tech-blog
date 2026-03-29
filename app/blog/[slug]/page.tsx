@@ -6,6 +6,7 @@ import MobileTableOfContents from '@/components/MobileTableOfContents';
 import Giscus from '@/components/Giscus';
 import CodeCopyHandler from '@/components/CodeCopyHandler';
 import SvgInteractiveHandler from '@/components/SvgInteractiveHandler';
+import SvgPlaygroundHandler from '@/components/SvgPlaygroundHandler';
 import ReadingProgress from '@/components/ReadingProgress';
 import PostNavigation from '@/components/PostNavigation';
 
@@ -63,6 +64,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     <>
       <CodeCopyHandler />
       <SvgInteractiveHandler />
+      <SvgPlaygroundHandler />
       <ReadingProgress />
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* 뒤로 가기 버튼 */}

@@ -13,6 +13,14 @@ export default function SvgInteractiveHandler() {
       const preview = container.querySelector('.svg-interactive-preview');
       if (!preview) return;
 
+      // Smart overflow: show scrollbar only when content actually overflows
+      const previewEl = preview as HTMLElement;
+      requestAnimationFrame(() => {
+        if (previewEl.scrollWidth > previewEl.clientWidth) {
+          previewEl.style.overflowX = 'auto';
+        }
+      });
+
       const codeLines = container.querySelectorAll<HTMLElement>(
         '.code-line[data-element-id]'
       );
