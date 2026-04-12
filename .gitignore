@@ -8,3 +8,6 @@ dist
 .env.local
 .env.*.local
 
+.claude
+.omc
+CLAUDE.md
