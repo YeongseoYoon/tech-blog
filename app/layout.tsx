@@ -1,10 +1,41 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import "./globals.css";
+import { getSiteUrl, siteConfig } from "@/lib/siteConfig";
+
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  title: "yeongseo-blog",
-  description: "윤영서 기술 블로그",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  authors: [{ name: siteConfig.author }],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteUrl,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    images: [
+      {
+        url: "/static/images/logo.png",
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: ["/static/images/logo.png"],
+  },
   icons: {
     icon: [
       {

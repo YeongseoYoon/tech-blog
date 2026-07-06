@@ -1,6 +1,8 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Post, getAllPostSlugs, getPostBySlug, getAllPosts } from '@/lib/mdParser';
+import { getSiteUrl, siteConfig } from '@/lib/siteConfig';
 import TableOfContents from '@/components/TableOfContents';
 import MobileTableOfContents from '@/components/MobileTableOfContents';
 import Giscus from '@/components/Giscus';
@@ -23,7 +25,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: BlogPageProps) {
+export async function generateMetadata({
+  params,
+}: BlogPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -33,9 +37,45 @@ export async function generateMetadata({ params }: BlogPageProps) {
     };
   }
 
+  const siteUrl = getSiteUrl();
+  const postUrl = `${siteUrl}/blog/${slug}`;
+  // 제목 + 내용(프론트매터) 기반으로 자동 생성되는 OG 이미지.
+  // 글이 수정되면 제목/날짜/태그가 반영된 새 이미지가 자동으로 생성된다.
+  const ogImageUrl = `${siteUrl}/api/og/${slug}`;
+
   return {
     title: post.title,
     description: post.summary,
+    keywords: post.tags,
+    authors: [{ name: siteConfig.author }],
+    alternates: {
+      canonical: postUrl,
+    },
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.summary,
+      url: postUrl,
+      siteName: siteConfig.name,
+      locale: siteConfig.locale,
+      publishedTime: post.date || undefined,
+      authors: [siteConfig.author],
+      tags: post.tags,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.summary,
+      images: [ogImageUrl],
+    },
   };
 }
 
