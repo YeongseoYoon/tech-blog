@@ -1,8 +1,8 @@
 ---
-title: "취향과 판단력을 얻는 법"
+title: "[번역] 취향과 판단력을 얻는 법"
 date: "2026-08-01T09:00:00.000Z"
 summary: "에이전트가 반복 훈련을 가져간 시대, 주니어는 취향과 판단력을 의도적으로 길러야 합니다"
-tags: ["AI"]
+tags: ["AI", "translate"]
 ---
 
 > 이 글은 Addy Osmani의 [Earning taste and judgment](https://addyosmani.com/blog/earning-judgment/)를 원저자의 허락을 받아 번역한 글입니다.
