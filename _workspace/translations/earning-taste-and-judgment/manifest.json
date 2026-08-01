@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "slug": "earning-taste-and-judgment",
+  "source": {
+    "url": "https://addyosmani.com/blog/earning-judgment/",
+    "title": "Earning taste and judgment",
+    "author": "Addy Osmani",
+    "publishedAt": "2026-07-14"
+  },
+  "sourceCheckedAt": "2026-08-01",
+  "permission": {
+    "confirmed": true,
+    "note": "게시물 상단의 원저자 허락 확인 문구를 기준으로 기록"
+  },
+  "structure": {
+    "headings": 5,
+    "codeBlocks": 0,
+    "images": 0,
+    "unorderedListItems": 10,
+    "orderedListItems": 4
+  },
+  "contentLinks": [
+    "https://www.newyorkfed.org/research/college-labor-market",
+    "https://www.forbes.com/sites/michaeltnietzel/2026/02/23/unemployment-and-underemployment-rates-among-recent-college-graduates/",
+    "https://www.hiringlab.org/2025/07/30/experience-requirements-have-tightened-amid-the-tech-hiring-freeze/",
+    "https://digitaleconomy.stanford.edu/news/canaries-interest-rates-and-timinga-more-on-recent-drivers-of-employment-changes-for-young-workers/",
+    "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/",
+    "https://www.infoq.com/news/2026/04/junior-developer-pipeline-crisis/",
+    "https://www.technologyreview.com/2026/05/26/1137865/its-time-to-address-the-looming-crisis-in-entry-level-work/",
+    "https://www.weforum.org/publications/artificial-intelligence-and-the-future-of-entry-level-work-a-framework-for-safeguarding-and-reinventing-early-career-pathways/",
+    "https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/",
+    "https://fortune.com/2026/06/01/apollo-chief-economist-torsten-slok-zero-evidence-ai-killing-jobs-says-its-creating-them/",
+    "https://fortune.com/2026/04/06/ai-tech-displacement-effect-gen-z-16000-jobs-per-month/",
+    "https://newsletter.pragmaticengineer.com/p/tdd-ai-agents-and-coding-with-kent",
+    "https://knowledge.wharton.upenn.edu/podcast/ripple-effect/how-ai-is-reshaping-human-intuition-and-reasoning-gideon-nave-and-steven-shaw/",
+    "https://rogerwong.me/2026/02/what-happens-after-coding-is-solved-boris-cherny",
+    "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+    "https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-ama",
+    "http://www.incompleteideas.net/IncIdeas/BitterLesson.html"
+  ],
+  "publicationLinks": [
+    "https://www.pangram.com/history/97a8a162-1c10-4d30-b185-3a6ab8b68a0e"
+  ],
+  "forbiddenTerms": ["프론트엔드", "리팩토링", "워크플로우", "코드베이스"]
+}

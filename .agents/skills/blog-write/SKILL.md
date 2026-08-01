@@ -92,6 +92,8 @@ Korean FE Article의 기존 번역글을 대조 기준으로 삼아 다음 원�
 - 브라우저 자동화 도구로 원문 전체를 수집한다. 가능하면 저자의 원본 Markdown을 우선한다.
 - 원문의 `href + 링크 텍스트`, 이미지 URL, 코드, 강조 요소의 목록을 별도로 추출해 누락을 검사한다.
 - 링크 URL은 바꾸지 않고 앵커 텍스트만 번역한다.
+- `_workspace/translations/{slug}/manifest.json`에 원문 URL·제목·저자·게시일·확인일·허락 확인·본문 링크 목록·이미지 목록·구조 집계를 기록한다.
+- 원문 전체 복제본이나 비공개 허락 메시지는 기본적으로 커밋하지 않는다. 허락 증빙은 공개 가능한 참조 위치와 확인 사실만 기록한다.
 
 ### 이미지와 임베드
 
@@ -108,6 +110,8 @@ Korean FE Article의 기존 번역글을 대조 기준으로 삼아 다음 원�
 - `tags`는 기존 태그를 우선하고 `translate`를 함께 추가한다.
 - dev 서버에서 `/blog/{slug}`를 열어 제목, 날짜, 태그, 본문, 강조, 코드, 링크, 이미지를 확인한다.
 - 원문 링크 목록과 최종 Markdown 링크 목록을 대조해 URL 변경·누락이 없는지 검증한다.
+- `npm run check:translation -- posts/{slug}.md _workspace/translations/{slug}/manifest.json`을 실행하고 실패 항목을 모두 고친다.
+- 원문이 나중에 변경됐는지 확인할 수 있도록 `sourceCheckedAt`과 가능한 경우 원문 해시를 manifest에 남긴다.
 
 ## 산출물
 `_workspace/02_writer_draft.md`에 초안을 저장한다. 리뷰 반영 후 `posts/{slug}.md`에 최종본을 저장한다.
