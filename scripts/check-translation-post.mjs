@@ -28,6 +28,9 @@ if (!data.title?.startsWith("[번역] ")) fail('title은 "[번역] "으로 시�
 if (!Array.isArray(data.tags) || !data.tags.includes("translate")) fail('tags에 "translate"가 필요합니다.');
 if (!data.date || Number.isNaN(Date.parse(data.date))) fail("date는 유효한 ISO 8601 날짜여야 합니다.");
 if (!manifest.permission?.confirmed) fail("전문 번역 허락 확인 기록이 필요합니다.");
+if (!manifest.koreanFeArticle?.duplicateCheckedAt || !["available", "registered"].includes(manifest.koreanFeArticle?.status)) {
+  fail("KFA 중복 검사 일자와 통과 상태(available 또는 registered)가 필요합니다.");
+}
 if (!manifest.source?.url || !manifest.source?.title || !manifest.source?.author || !manifest.sourceCheckedAt) {
   fail("manifest에 원문 URL, 제목, 저자, 확인일이 필요합니다.");
 }
@@ -65,9 +68,12 @@ if (headings !== (manifest.structure?.headings ?? 0)) fail("manifest의 제목 �
 if (unorderedListItems !== (manifest.structure?.unorderedListItems ?? 0)) fail("manifest의 글머리표 항목 개수와 번역문이 다릅니다.");
 if (orderedListItems !== (manifest.structure?.orderedListItems ?? 0)) fail("manifest의 번호 목록 항목 개수와 번역문이 다릅니다.");
 
-const forbiddenTerms = manifest.forbiddenTerms ?? ["프론트엔드", "리팩토링", "워크플로우", "코드베이스"];
+const forbiddenTerms = manifest.forbiddenTerms ?? ["프론트엔드", "리팩토링", "코드베이스"];
 for (const term of forbiddenTerms) {
   if (content.includes(term)) fail(`용어집 비선호 표기가 남아 있습니다: ${term}`);
+}
+for (const pattern of manifest.forbiddenPatterns ?? ["워크플로(?!우)"]) {
+  if (new RegExp(pattern, "u").test(content)) fail(`용어집 비선호 패턴이 남아 있습니다: ${pattern}`);
 }
 
 if (failures.length) {

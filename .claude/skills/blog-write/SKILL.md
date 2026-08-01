@@ -59,7 +59,8 @@ tags: ["태그1", "태그2"] # 기존 태그 재사용 우선, 대문자 (JavaSc
 영어 등 외부 아티클을 번역해 이 블로그에 올릴 때의 방식. (예: Addy Osmani, "Earning taste and judgment" → `posts/earning-taste-and-judgment.md`)
 
 ### Korean FE Article 관례
-- 번역을 시작하기 전에 `references/korean-fe-terminology.md`를 반드시 읽고 기술 용어의 기본 표기를 적용한다.
+- 번역을 시작하기 전에 로컬 Korean FE Article 저장소의 `.hanspell-typos`와 `references/korean-fe-terminology.md`를 순서대로 읽는다. 두 파일이 충돌하면 KFA 공식 `.hanspell-typos`를 우선하고 작업용 용어집을 함께 수정한다.
+- 원문 URL을 `.agents/skills/blog-write/scripts/check-kfa-duplicate.mjs`로 검사한다. KFA의 전체 open/closed 이슈·PR 또는 모든 연도 번역 파일에서 동일 URL이 나오면 번역을 중단하고 중복 링크를 보고한다.
 - 최근 Korean FE Article 번역글 2~3편을 대조해 제목, 문체, 용어, 문단 호흡을 확인한다.
 - 자연스럽고 간결한 **~습니다/~입니다체**를 사용한다.
 - 내용을 요약·각색·추가하지 않고 원문의 주장, 문단 흐름, 강조 의도를 보존한다.
@@ -78,8 +79,16 @@ tags: ["태그1", "태그2"] # 기존 태그 재사용 우선, 대문자 (JavaSc
 ### 원문 수집
 - **Playwright MCP로 원문 페이지 전체를 가져온다** (요약 금지). 가능하면 저자의 원본 마크다운(예: GitHub raw)을 우선 사용한다.
 - 방문 시 **하이퍼링크(href + 앵커 텍스트)와 이미지 URL 목록을 함께 추출**해 둔다. 누락 방지.
-- `_workspace/translations/{slug}/manifest.json`에 원문 URL·제목·저자·게시일·확인일·허락 확인·본문 링크 목록·이미지 목록·구조 집계를 기록한다.
+- `_workspace/translations/{slug}/manifest.json`에 원문 URL·제목·저자·게시일·확인일·허락 확인·KFA 중복 검사 결과와 이슈 URL·본문 링크 목록·이미지 목록·구조 집계를 기록한다.
 - 원문 전체 복제본이나 비공개 허락 메시지는 기본적으로 커밋하지 않는다. 허락 증빙은 공개 가능한 참조 위치와 확인 사실만 기록한다.
+
+### 개인 블로그와 KFA 제출본 분리
+
+- `posts/{slug}.md`는 tech-blog 전용 최종본이다. `[번역]` 제목, frontmatter, 로컬 이미지, 저자 소개 규칙을 유지한다.
+- KFA 제출본은 로컬 `korean-fe-article` 저장소에 `{년도}/{월}/{번역자명} - {원문 제목}.md`로 별도 생성한다.
+- KFA 제출본은 첫 줄 `# 번역 제목`, 다음 블록 `> 원문: {URL}` 형식을 사용하며 tech-blog frontmatter, `[번역]`, `translate` 태그를 복사하지 않는다.
+- 이미지 정책은 저장소별로 다르게 적용한다. tech-blog는 로컬 호스팅하고 KFA 제출본은 원문 이미지 URL을 보존한다.
+- KFA 제출본을 만든 뒤 그 저장소의 `translate-full`, 5관점 리뷰, glossary, final-check, PR 템플릿을 따른다.
 
 ### 번역 원칙
 - 문체는 이 블로그 톤과 동일한 **~습니다/~입니다체**. 원저자의 어투·강조(볼드/이탤릭)·문단 구조를 유지한다.

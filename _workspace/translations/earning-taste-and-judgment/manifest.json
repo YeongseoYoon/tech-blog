@@ -12,6 +12,12 @@
     "confirmed": true,
     "note": "게시물 상단의 원저자 허락 확인 문구를 기준으로 기록"
   },
+  "koreanFeArticle": {
+    "duplicateCheckedAt": "2026-08-01",
+    "status": "registered",
+    "issueUrl": "https://github.com/Korean-FE-Article/korean-fe-article/issues/1143",
+    "assignee": "YeongseoYoon"
+  },
   "structure": {
     "headings": 5,
     "codeBlocks": 0,
@@ -41,5 +47,6 @@
   "publicationLinks": [
     "https://www.pangram.com/history/97a8a162-1c10-4d30-b185-3a6ab8b68a0e"
   ],
-  "forbiddenTerms": ["프론트엔드", "리팩토링", "워크플로우", "코드베이스"]
+  "forbiddenTerms": ["프론트엔드", "리팩토링", "코드베이스"],
+  "forbiddenPatterns": ["워크플로(?!우)"]
 }
