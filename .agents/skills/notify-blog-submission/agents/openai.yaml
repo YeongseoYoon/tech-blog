@@ -1,0 +1,4 @@
+interface:
+  display_name: "블로그 제출 알림"
+  short_description: "블로그 초안·게시 링크를 주차별 GitHub 이슈에 등록"
+  default_prompt: "Use $notify-blog-submission to prepare a weekly blog submission comment and ask for approval before posting it."
