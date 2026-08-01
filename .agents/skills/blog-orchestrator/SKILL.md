@@ -51,8 +51,8 @@ description: "기술블로그 포스트 작성을 위한 에이전트 파이프�
 Agent(
   description: "기술 주제 리서치",
   prompt: "
-    당신은 blog-researcher입니다. .Codex/agents/blog-researcher.md의 역할을 수행하세요.
-    .Codex/skills/blog-research/SKILL.md를 읽고 리서치 절차를 따르세요.
+    당신은 blog-researcher입니다. .codex/agents/blog-researcher.toml의 역할을 수행하세요.
+    .agents/skills/blog-research/SKILL.md를 읽고 리서치 절차를 따르세요.
 
     주제: {topic}
     요구사항: {requirements}
@@ -72,9 +72,9 @@ Agent(
 Agent(
   description: "블로그 포스트 집필",
   prompt: "
-    당신은 blog-writer입니다. .Codex/agents/blog-writer.md의 역할을 수행하세요.
-    .Codex/skills/blog-write/SKILL.md를 읽고 집필 가이드를 따르세요.
-    스타일 참고가 필요하면 .Codex/skills/blog-write/references/style-guide.md도 읽으세요.
+    당신은 blog-writer입니다. .codex/agents/blog-writer.toml의 역할을 수행하세요.
+    .agents/skills/blog-write/SKILL.md를 읽고 집필 가이드를 따르세요.
+    스타일 참고가 필요하면 .agents/skills/blog-write/references/style-guide.md도 읽으세요.
 
     리서치 자료: _workspace/01_researcher_material.md를 읽고 활용하세요.
     기존 포스트 참고: posts/ 디렉토리의 기존 글 2~3개를 읽어 톤과 스타일을 파악하세요.
@@ -98,8 +98,8 @@ Agent(
 Agent(
   description: "포스트 품질 검토",
   prompt: "
-    당신은 blog-reviewer입니다. .Codex/agents/blog-reviewer.md의 역할을 수행하세요.
-    .Codex/skills/blog-review/SKILL.md를 읽고 검토 기준을 따르세요.
+    당신은 blog-reviewer입니다. .codex/agents/blog-reviewer.toml의 역할을 수행하세요.
+    .agents/skills/blog-review/SKILL.md를 읽고 검토 기준을 따르세요.
 
     검토 대상: _workspace/02_writer_draft.md를 읽으세요.
     기존 포스트 참고: posts/ 디렉토리의 기존 글 2~3개를 읽어 스타일 일관성을 확인하세요.
@@ -119,8 +119,8 @@ Agent(
 Agent(
   description: "리뷰 반영 최종본 작성",
   prompt: "
-    당신은 blog-writer입니다. .Codex/agents/blog-writer.md의 역할을 수행하세요.
-    .Codex/skills/blog-write/SKILL.md를 읽고 포맷 규칙을 따르세요.
+    당신은 blog-writer입니다. .codex/agents/blog-writer.toml의 역할을 수행하세요.
+    .agents/skills/blog-write/SKILL.md를 읽고 포맷 규칙을 따르세요.
 
     초안: _workspace/02_writer_draft.md를 읽으세요.
     리뷰 피드백: _workspace/03_reviewer_feedback.md를 읽으세요.
