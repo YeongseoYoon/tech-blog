@@ -53,6 +53,8 @@ description: "기술블로그 포스트 품질 검토. 기술적 정확성, 가�
 - `blog-write/references/korean-fe-terminology.md`의 선호 표기를 일관되게 사용했는가
 - `[역자 주: ...]` 외에 번역자가 추가한 의견이 본문에 섞이지 않았는가
 - `humanize-korean` 적용 전후로 의미, 수치, 어조가 달라지지 않았는가
+- `blog-write/references/translation-naturalness.md`를 읽고 은유 직역, 추상명사 중첩, 불명확한 대상, 영어식 명사화·결합 표현이 남았는가
+- 자연스럽게 고치는 과정에서 원문의 반복 은유, 주장 강도, 인과 관계, 의도적인 모호함을 지우거나 새 설명을 보태지 않았는가
 - 번역 manifest가 있고 원문 URL·확인일·허락 확인·구조 및 에셋 집계가 기록됐는가
 - 자동 검사 명령이 성공했는가
 
@@ -65,7 +67,7 @@ description: "기술블로그 포스트 품질 검토. 기술적 정확성, 가�
 5. 글의 흐름과 가독성을 평가한다
 6. MUST FIX / NICE TO HAVE로 분류하여 피드백을 작성한다
 
-번역 글은 원문과 manifest를 함께 읽고 항목별 대조표를 작성한다. 원문을 읽을 수 없거나 하나라도 검증하지 못한 항목이 있으면 `검증 불가`를 MUST FIX로 분류하며 게시 승인 판정을 내리지 않는다.
+번역 글은 원문, manifest, `blog-write/references/translation-naturalness.md`를 함께 읽고 항목별 대조표를 작성한다. 각 문단에서 `누가/무엇이 → 무엇을 한다 → 그 결과가 무엇인가`를 복원해 번역문과 대조한다. 원문을 읽을 수 없거나 하나라도 검증하지 못한 항목이 있으면 `검증 불가`를 MUST FIX로 분류하며 게시 승인 판정을 내리지 않는다.
 
 ## 산출물
 `_workspace/03_reviewer_feedback.md`에 리뷰 결과를 저장한다. 구조는 에이전트 정의(blog-reviewer.md)의 출력 형식을 따른다.
