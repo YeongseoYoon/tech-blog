@@ -5,11 +5,7 @@ summary: "제어권을 놓으면 성능이 잡힙니다"
 tags: ["Web", "Performance", "translate"]
 ---
 
-> 이 글은 Jim Nielsen의 **“Write Code That Runs in the Browser, or Write Code the Browser Runs”**를 원저자의 허락을 받아 번역한 글입니다.
->
-> - 원저자: Jim Nielsen
-> - 원문: [Write Code That Runs in the Browser, or Write Code the Browser Runs](https://blog.jim-nielsen.com/2025/more-control-equals-less-performance/)
-> - 번역 허락: 원저자에게 전문 번역 허락을 받았습니다.
+> 이 글은 Jim Nielsen의 [**“Write Code That Runs in the Browser, or Write Code the Browser Runs”**](https://blog.jim-nielsen.com/2025/more-control-equals-less-performance/)를 원저자의 허락을 받아 번역한 글입니다.
 
 Alex Russell이 남긴 [메모](https://notes.jim-nielsen.com/#2025-07-18T0946)를 곱씹어 보고 있습니다. 그는 이렇게 말합니다.
 
