@@ -72,10 +72,17 @@ for (const image of images) {
 if (images.length !== (manifest.structure?.images ?? 0)) fail("manifest의 이미지 개수와 번역문이 다릅니다.");
 
 const fencedCodeBlocks = (content.match(/^```/gm) ?? []).length / 2;
+const proseOutsideFences = content.replace(/^```[^\n]*\n[\s\S]*?^```\s*$/gm, "");
+const inlineCodeSpans = (proseOutsideFences.match(/`[^`\n]+`/g) ?? []).length;
+const emphasisSpans = (proseOutsideFences.match(/(?<!\*)\*(?!\*)[^*\n]+(?<!\*)\*(?!\*)/g) ?? []).length;
+const asides = (content.match(/<aside(?:\s[^>]*)?>/g) ?? []).length;
 const headings = (content.match(/^#{1,6}\s+/gm) ?? []).length;
 const unorderedListItems = (content.match(/^\s*[-*+]\s+/gm) ?? []).length;
 const orderedListItems = (content.match(/^\s*\d+\.\s+/gm) ?? []).length;
 if (fencedCodeBlocks !== (manifest.structure?.codeBlocks ?? 0)) fail("manifest의 코드 블록 개수와 번역문이 다릅니다.");
+if (inlineCodeSpans !== (manifest.structure?.inlineCodeSpans ?? 0)) fail("manifest의 인라인 코드 개수와 번역문이 다릅니다.");
+if (emphasisSpans !== (manifest.structure?.emphasisSpans ?? 0)) fail("manifest의 강조 개수와 번역문이 다릅니다.");
+if (asides !== (manifest.structure?.asides ?? 0)) fail("manifest의 aside 개수와 번역문이 다릅니다.");
 if (headings !== (manifest.structure?.headings ?? 0)) fail("manifest의 제목 개수와 번역문이 다릅니다.");
 if (unorderedListItems !== (manifest.structure?.unorderedListItems ?? 0)) fail("manifest의 글머리표 항목 개수와 번역문이 다릅니다.");
 if (orderedListItems !== (manifest.structure?.orderedListItems ?? 0)) fail("manifest의 번호 목록 항목 개수와 번역문이 다릅니다.");
@@ -96,4 +103,5 @@ if (failures.length) {
 console.log(`PASS: ${postArg}`);
 console.log(`- 원문 본문 링크 ${actualBodyUrls.length}개 일치`);
 console.log(`- 제목 ${headings}개, 글머리표 ${unorderedListItems}개, 번호 목록 ${orderedListItems}개 확인`);
-console.log(`- 코드 블록 ${fencedCodeBlocks}개, 이미지 ${images.length}개 확인`);
+console.log(`- 코드 블록 ${fencedCodeBlocks}개, 인라인 코드 ${inlineCodeSpans}개, 강조 ${emphasisSpans}개, aside ${asides}개 확인`);
+console.log(`- 이미지 ${images.length}개 확인`);
