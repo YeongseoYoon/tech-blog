@@ -24,9 +24,10 @@ description: "기술블로그 포스트 품질 검토. 기술적 정확성, 가�
 - 코드 예제 직후에 충분한 해설이 있는가
 
 ### 3. 포맷 준수
-- Frontmatter 필수 필드: title, date, summary, tags
+- 일반 글의 Frontmatter 필수 필드: title, date, summary, tags
+- 번역 글의 Frontmatter 필수 필드: title, date, tags (`summary`는 원문에 description이 있을 때만 필수)
 - date가 ISO 8601 형식인가
-- summary가 위트 있고 짧은가
+- 일반 글의 summary가 위트 있고 짧은가
 - tags가 기존 태그와 일관되는가
 - H1/H2/H3 계층이 올바른가
 - 코드 블록에 언어 태그가 있는가
@@ -56,6 +57,7 @@ description: "기술블로그 포스트 품질 검토. 기술적 정확성, 가�
 - `blog-write/references/translation-naturalness.md`를 읽고 은유 직역, 추상명사 중첩, 불명확한 대상, 영어식 명사화·결합 표현이 남았는가
 - 자연스럽게 고치는 과정에서 원문의 반복 은유, 주장 강도, 인과 관계, 의도적인 모호함을 지우거나 새 설명을 보태지 않았는가
 - 번역 manifest가 있고 원문 URL·확인일·허락 확인·구조 및 에셋 집계가 기록됐는가
+- manifest의 `source.description`이 원문 description의 존재 여부와 일치하는가. 원문에 description이 있으면 번역 글의 `summary`가 그 내용을 충실히 번역했는가. 원문에 description이 없으면 `source.description`이 `null`이고 번역 글에 `summary`가 없는가. 번역자가 summary를 임의로 만든 경우 MUST FIX로 분류한다.
 - 자동 검사 명령이 성공했는가
 
 ## 검토 절차

@@ -1,7 +1,6 @@
 ---
 title: "[번역] 참조 안정성을 타입으로 만들기"
 date: "2026-09-22T00:00:00.000Z"
-summary: "참조도 타입을 탑니다"
 tags: ["TypeScript", "React", "translate"]
 ---
 

@@ -34,6 +34,18 @@ if (!manifest.koreanFeArticle?.duplicateCheckedAt || !["available", "registered"
 if (!manifest.source?.url || !manifest.source?.title || !manifest.source?.author || !manifest.sourceCheckedAt) {
   fail("manifest에 원문 URL, 제목, 저자, 확인일이 필요합니다.");
 }
+const sourceHasDescriptionField = Object.prototype.hasOwnProperty.call(manifest.source ?? {}, "description");
+if (sourceHasDescriptionField) {
+  const sourceHasDescription = typeof manifest.source.description === "string" && manifest.source.description.trim().length > 0;
+  const postHasSummaryField = Object.prototype.hasOwnProperty.call(data, "summary");
+  const postHasSummary = typeof data.summary === "string" && data.summary.trim().length > 0;
+  if (!sourceHasDescription && postHasSummaryField) {
+    fail("원문에 description이 없으면 번역 글의 summary 필드를 생략해야 합니다.");
+  }
+  if (sourceHasDescription && !postHasSummary) {
+    fail("원문에 description이 있으면 번역한 summary가 필요합니다.");
+  }
+}
 if (!content.includes(manifest.source.url)) fail("본문 상단에 원문 링크백이 없습니다.");
 if (!content.includes("원저자") || !content.includes("번역한 글입니다")) fail("번역 사실과 원저자 크레딧이 없습니다.");
 if (!content.includes(manifest.source.author) || !/원저자[\s\S]{0,1000}(?:입니다|이다)/.test(content.slice(-1600))) {

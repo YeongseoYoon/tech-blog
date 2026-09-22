@@ -45,7 +45,7 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: post.summary,
+    description: post.summary ?? null,
     keywords: post.tags,
     authors: [{ name: siteConfig.author }],
     alternates: {
@@ -54,7 +54,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'article',
       title: post.title,
-      description: post.summary,
+      ...(post.summary ? { description: post.summary } : {}),
       url: postUrl,
       siteName: siteConfig.name,
       locale: siteConfig.locale,
@@ -73,7 +73,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.summary,
+      ...(post.summary ? { description: post.summary } : {}),
       images: [ogImageUrl],
     },
   };
@@ -134,7 +134,11 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 ))}
               </div>
             </div>
-            <p className="text-lg text-gray-700 dark:text-gray-300 italic">{post.summary}</p>
+            {post.summary && (
+              <p className="text-lg text-gray-700 dark:text-gray-300 italic">
+                {post.summary}
+              </p>
+            )}
           </header>
 
           {/* 모바일 목차 (플로팅 버튼) */}
@@ -172,4 +176,3 @@ export default async function BlogPage({ params }: BlogPageProps) {
     </>
   );
 }
-

@@ -16,7 +16,7 @@ export function searchPosts(posts: Post[], query: string): Post[] {
 
   return posts.filter((post) => {
     const title = post.title.toLowerCase();
-    const summary = post.summary.toLowerCase();
+    const summary = post.summary?.toLowerCase() ?? '';
     const content = post.content.toLowerCase();
 
     return title.includes(lowercaseQuery) || summary.includes(lowercaseQuery) || content.includes(lowercaseQuery);
@@ -59,4 +59,3 @@ export function searchAndFilter(posts: Post[], query: string, selectedTags: stri
 
   return results;
 }
-

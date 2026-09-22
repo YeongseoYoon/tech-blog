@@ -43,9 +43,11 @@ export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
                 <p className="text-sm font-medium text-gray-900 group-hover:text-blue-600 line-clamp-2">
                   {post.title}
                 </p>
-                <p className="text-xs text-gray-500 mt-1 line-clamp-1">
-                  {post.summary}
-                </p>
+                {post.summary && (
+                  <p className="text-xs text-gray-500 mt-1 line-clamp-1">
+                    {post.summary}
+                  </p>
+                )}
               </div>
             </Link>
           </li>
@@ -54,4 +56,3 @@ export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
     </div>
   );
 }
-

@@ -31,7 +31,7 @@ function remarkPreserveMeta() {
 export interface PostMetadata {
   title: string;
   date: string;
-  summary: string;
+  summary?: string;
   tags: string[];
   featured?: boolean;
   slug?: string;
@@ -118,7 +118,10 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       slug,
       title: data.title || "",
       date: data.date || "",
-      summary: data.summary || "",
+      summary:
+        typeof data.summary === "string" && data.summary.trim()
+          ? data.summary
+          : undefined,
       tags: data.tags || [],
       featured: data.featured || false,
       content,

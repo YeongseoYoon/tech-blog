@@ -21,9 +21,11 @@ export default function PostCard({ post }: PostCardProps) {
               {post.title}
             </h2>
             <p className="text-sm text-gray-500 mb-3">{formattedDate}</p>
-            <p className="text-gray-600 mb-4 line-clamp-2 leading-relaxed">
-              {post.summary}
-            </p>
+            {post.summary && (
+              <p className="text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+                {post.summary}
+              </p>
+            )}
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span key={tag} className="tag">
@@ -37,4 +39,3 @@ export default function PostCard({ post }: PostCardProps) {
     </Link>
   );
 }
-

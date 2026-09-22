@@ -120,7 +120,9 @@ Korean FE Article의 기존 번역글을 대조 기준으로 삼아 다음 원�
 - 파일명은 원문 슬러그를 영문 케밥 케이스로 사용한다.
 - `date`는 번역 게시일 기준 ISO 8601을 사용한다.
 - `title`은 `[번역] {한국어 번역 제목}` 형식으로 작성한다. `[번역]` 뒤에 공백 한 칸을 둔다.
+- 번역 글의 `summary`는 원문에 별도의 description이 있을 때만 작성하며, 그 내용을 충실히 번역해 사용한다. 원문에 description이 없으면 임의의 문구를 만들지 않고 `summary` 필드 자체를 생략한다. 일반 글에는 기존의 위트 있는 한 줄 summary 규칙을 그대로 적용한다.
 - `tags`는 기존 태그를 우선하고 `translate`를 함께 추가한다.
+- manifest의 `source.description`에는 원문의 description 원문을 기록하고, 원문에 description이 없으면 `null`을 기록한다.
 - dev 서버에서 `/blog/{slug}`를 열어 제목, 날짜, 태그, 본문, 강조, 코드, 링크, 이미지를 확인한다.
 - 원문 링크 목록과 최종 Markdown 링크 목록을 대조해 URL 변경·누락이 없는지 검증한다.
 - `npm run check:translation -- posts/{slug}.md _workspace/translations/{slug}/manifest.json`을 실행하고 실패 항목을 모두 고친다.
