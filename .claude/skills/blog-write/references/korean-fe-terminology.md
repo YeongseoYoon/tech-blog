@@ -17,7 +17,7 @@ Korean FE Article 팀원의 공개 번역글에서 반복 확인한 표기를 `t
 |---|---|---|
 | frontend / front-end | 프런트엔드 | `프론트엔드` 대신 사용 |
 | backend / back-end | 백엔드 | |
-| full-stack | 풀 스택 | 고유 직함·제품 표기는 원문 우선 |
+| full-stack | 풀스택 | 고유 직함·제품 표기는 원문 우선 |
 | JavaScript | 자바스크립트 | 코드와 정식 명칭을 강조할 때 `JavaScript` 허용 |
 | TypeScript | 타입스크립트 | 코드와 정식 명칭을 강조할 때 `TypeScript` 허용 |
 | React | 리액트 | 패키지명·코드에서는 `React` 유지 |
@@ -27,7 +27,7 @@ Korean FE Article 팀원의 공개 번역글에서 반복 확인한 표기를 `t
 | runtime | 런타임 | |
 | tooling | 툴링 | 단일 도구는 `도구`가 자연스러우면 번역 |
 | developer experience | 개발자 경험 | 약어가 핵심이면 첫 등장에 `개발자 경험(DX)` |
-| codebase | 코드 베이스 | 글 안에서 `코드베이스`와 혼용 금지 |
+| codebase | 코드베이스 | 글 안에서 `코드 베이스`와 혼용 금지 |
 | open source | 오픈 소스 | |
 | workflow | 워크플로우 | KFA 공식 `.hanspell-typos` 기준 |
 | trade-off | 트레이드오프 | 문맥상 선택의 득실이면 `절충안` 허용 |
@@ -37,7 +37,7 @@ Korean FE Article 팀원의 공개 번역글에서 반복 확인한 표기를 `t
 | bundle / bundling | 번들 / 번들링 | |
 | compiler | 컴파일러 | |
 | compile | 컴파일 | |
-| memoization | 메모화 | React 문맥에서도 동일 |
+| memoization | 메모이제이션 | React 문맥에서도 동일 |
 | refactoring | 리팩터링 | `리팩토링` 대신 사용 |
 | naming convention | 네이밍 컨벤션 | 단순 규칙을 뜻하면 `이름 규칙` 허용 |
 | type-safe / type safety | 타입 안전한 / 타입 안정성 | 문장 성분에 맞춰 구분 |

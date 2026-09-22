@@ -80,7 +80,7 @@ if (headings !== (manifest.structure?.headings ?? 0)) fail("manifest의 제목 �
 if (unorderedListItems !== (manifest.structure?.unorderedListItems ?? 0)) fail("manifest의 글머리표 항목 개수와 번역문이 다릅니다.");
 if (orderedListItems !== (manifest.structure?.orderedListItems ?? 0)) fail("manifest의 번호 목록 항목 개수와 번역문이 다릅니다.");
 
-const forbiddenTerms = manifest.forbiddenTerms ?? ["프론트엔드", "리팩토링", "코드베이스"];
+const forbiddenTerms = manifest.forbiddenTerms ?? ["프론트엔드", "리팩토링", "풀 스택", "코드 베이스", "메모화"];
 for (const term of forbiddenTerms) {
   if (content.includes(term)) fail(`용어집 비선호 표기가 남아 있습니다: ${term}`);
 }
