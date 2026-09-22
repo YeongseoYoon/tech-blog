@@ -6,7 +6,7 @@ tags: ["TypeScript", "React", "translate"]
 
 > 이 글은 Jovi De Croock의 [**“Making Referential Stability a Type”**](https://www.jovidecroock.com/blog/referential-stability-types/)을 원저자의 허락을 받아 번역한 글입니다.
 
-어느 정도 규모가 있는 리액트나 Preact 코드 베이스에서 일해 봤다면, 참조 안정성에 관한 이야기를 지겨울 만큼 나눠 봤을 겁니다. 누군가는 `useMemo`를 추가하고, 다른 누군가는 `useCallback`을 추가합니다. exhaustive-deps 경고를 끈 다음, 다음 컴포넌트에 전달한 prop이 안정적이기를 모두가 바랍니다. 코드는 대체로 올바르지만, 이렇게 암묵적인 안정성을 완전히 보장할 방법은 없습니다.
+어느 정도 규모가 있는 리액트나 Preact 코드 베이스에서 작업해 봤다면, 참조 안정성에 관한 이야기를 지겨울 만큼 나눠 봤을 겁니다. 누군가는 `useMemo`를 추가하고, 다른 누군가는 `useCallback`을 추가합니다. exhaustive-deps 경고를 끈 다음, 다음 컴포넌트에 전달한 prop이 안정적이기를 모두가 바랍니다. 코드는 대체로 올바르지만, 이렇게 암묵적인 안정성을 완전히 보장할 방법은 없습니다.
 
 메모화된 자식 컴포넌트에 새 배열 리터럴을 넘긴 탓에 일어난 리렌더링이나 이펙트 실행을 추적하느라, 인정하고 싶은 것보다 훨씬 많은 시간을 썼습니다. `Item[]`로 선언한 타입이나 `Item[]`로 지정한 prop 타입은 타입의 형태와 그 형태 *안에* 무엇이 있는지는 알려 주지만, 다음 렌더링에서도 안정적인 배열을 받는지는 알려 주지 않습니다.
 
