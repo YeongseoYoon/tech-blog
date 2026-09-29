@@ -14,7 +14,7 @@ tags: ["TypeScript", "React", "translate"]
 
 ## 타입
 
-이 아이디어 전체는 비공개 팬텀 브랜드 하나에 달려 있습니다.
+이 아이디어 전체는 외부에 드러나지 않는 가상의 브랜드 하나에 달려 있습니다.
 
 ```ts
 declare const stableBrand: unique symbol
@@ -22,7 +22,7 @@ declare const stableBrand: unique symbol
 type Stable<T> = T extends object ? T & { readonly [stableBrand]: true } : T
 ```
 
-객체와 배열, 함수에는 브랜드가 붙습니다. 프리미티브는 그대로 통과합니다. 리액트와 Preact가 이미 프리미티브를 값으로 비교하기 때문에, `string`은 언제나 "충분히 안정적"입니다.
+객체와 배열, 함수에는 브랜드가 붙습니다. 원시값은 그대로 통과합니다. 리액트와 Preact가 이미 원시값을 값으로 비교하기 때문에, `string`은 언제나 "충분히 안정적"입니다.
 
 <aside>
 
@@ -67,7 +67,7 @@ type ItemListProps = {
 ```ts
 const unstable = {}
 const value = useMemo(() => ({ answer: 42 }), [unstable])
-// no error. value is just { answer: number }, unbranded
+// 오류 없음. value는 브랜드가 붙지 않은 { answer: number }일 뿐입니다.
 ```
 
 정작 오류가 나길 바랐던 의존성 목록에서는 아무 오류도 발생하지 않습니다. 그저 증명이 만들어지지 않을 뿐입니다. 그래서 이 방식과 씨름하는 일을 그만뒀습니다. 엄격한 경로는 별도의 진입점으로 제공됩니다.
@@ -157,7 +157,7 @@ import { useEffect, useMemo, type Stable } from 'stableref/preact'
 
 ## 이 방식으로 해결할 수 없는 것
 
-마음먹은 개발자라면 언제든 다음 코드를 작성할 수 있습니다.
+우회할 작정인 개발자라면 언제든 다음처럼 작성할 수 있습니다.
 
 ```ts
 value as Stable<typeof value>
