@@ -55,12 +55,14 @@ if (!content.includes(manifest.source.author) || !/원저자[\s\S]{0,1000}(?:입
 const markdownUrls = [...content.matchAll(/\[[^\]]*\]\((https?:\/\/[^)\s]+)\)/g)].map((match) => match[1]);
 const expectedBodyUrls = manifest.contentLinks ?? [];
 const actualBodyUrls = markdownUrls.filter((url) => url !== manifest.source.url && !(manifest.publicationLinks ?? []).includes(url));
-const missing = expectedBodyUrls.filter((url) => !actualBodyUrls.includes(url));
-const extra = actualBodyUrls.filter((url) => !expectedBodyUrls.includes(url));
-const duplicates = actualBodyUrls.filter((url, index) => actualBodyUrls.indexOf(url) !== index);
+// Preserve repeated links in the source while still detecting missing or added occurrences.
+const countUrls = (urls) => urls.reduce((counts, url) => counts.set(url, (counts.get(url) ?? 0) + 1), new Map());
+const expectedCounts = countUrls(expectedBodyUrls);
+const actualCounts = countUrls(actualBodyUrls);
+const missing = [...expectedCounts].filter(([url, count]) => (actualCounts.get(url) ?? 0) < count).map(([url]) => url);
+const extra = [...actualCounts].filter(([url, count]) => count > (expectedCounts.get(url) ?? 0)).map(([url]) => url);
 if (missing.length) fail(`누락된 원문 링크: ${missing.join(", ")}`);
 if (extra.length) fail(`원문에 없는 본문 링크: ${extra.join(", ")}`);
-if (duplicates.length) fail(`중복된 본문 링크: ${[...new Set(duplicates)].join(", ")}`);
 
 const images = [...content.matchAll(/<img\s+[^>]*src=["']([^"']+)["']/g)].map((match) => match[1]);
 for (const image of images) {
