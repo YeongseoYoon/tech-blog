@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-grug-brained-developer",
+  "status": "ready-for-publication",
+  "source": {
+    "description": null,
+    "publishedAt": null,
+    "author": "Carson Gross",
+    "url": "https://grugbrain.dev/",
+    "title": "The Grug Brained Developer"
+  },
+  "sourceCheckedAt": "2026-10-31",
+  "sourceSha256": "7c6e1ce4be4c9ce9a879f6389f54d3156fef73a50569c0e29e12ab64995f80c2",
+  "permission": {
+    "evidenceUrl": "https://github.com/Korean-FE-Article/korean-fe-article/issues/1192#issuecomment-6538899377",
+    "licenseUrl": "https://github.com/bigskysoftware/grugbrain.dev/blob/master/LICENSE",
+    "confirmed": true,
+    "note": "Author permission verified; source is public domain. Private message content is not included."
+  },
+  "koreanFeArticle": {
+    "commit": "74d3607b61104abdfaac770ebf38017300e7edd6",
+    "duplicateCheckedAt": "2026-10-31",
+    "issueUrl": "https://github.com/Korean-FE-Article/korean-fe-article/issues/1192",
+    "assignee": "YeongseoYoon",
+    "prUrl": "https://github.com/Korean-FE-Article/korean-fe-article/pull/1232",
+    "status": "registered"
+  },
+  "structure": {
+    "images": 2,
+    "unorderedListItems": 10,
+    "orderedListItems": 0,
+    "codeBlocks": 2,
+    "inlineCodeSpans": 3,
+    "headings": 29,
+    "emphasisSpans": 18,
+    "asides": 0
+  },
+  "contentLinks": [
+    "https://www.redbubble.com/i/sticker/Programmer-Grug-by-colossalbreaker/42915272.EJUG5",
+    "https://www.lulu.com/shop/carson-gross/the-grug-brained-developer/paperback/product-2m47wqg.html",
+    "https://swag.htmx.org/collections/grug",
+    "https://en.wikipedia.org/wiki/Pareto_principle",
+    "https://en.wikipedia.org/wiki/Unit_testing",
+    "https://smartbear.com/solutions/end-to-end-testing/",
+    "https://en.wikipedia.org/wiki/Integration_testing",
+    "https://en.wikipedia.org/wiki/Mock_object",
+    "https://en.wikipedia.org/wiki/No_Silver_Bullet",
+    "https://www.webopedia.com/definitions/j2ee/",
+    "https://www.techtarget.com/searchnetworking/definition/OSGi",
+    "https://en.wikipedia.org/wiki/G._K._Chesterton",
+    "https://en.wikipedia.org/wiki/Don%27t_repeat_yourself",
+    "https://en.wikipedia.org/wiki/Separation_of_concerns",
+    "https://htmx.org/essays/locality-of-behaviour/",
+    "https://en.wikipedia.org/wiki/Rob_Pike",
+    "https://www.youtube.com/watch?v=KINIAgRpkDA",
+    "https://stackify.com/logging-java/",
+    "https://en.wikipedia.org/wiki/Optimistic_concurrency_control",
+    "https://en.wikipedia.org/wiki/Thread-local_storage",
+    "https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html",
+    "https://en.wikipedia.org/wiki/Erlang_(programming_language)",
+    "https://en.wikipedia.org/wiki/Recursive_descent_parser",
+    "https://craftinginterpreters.com/",
+    "https://en.wikipedia.org/wiki/Visitor_pattern",
+    "https://htmx.org",
+    "https://hyperscript.org",
+    "https://star-history.com/#bigskysoftware/htmx&bigskysoftware/_hyperscript&Date",
+    "https://www.dreamsongs.com/WorseIsBetter.html",
+    "https://www.dreamsongs.com/Files/worse-is-worse.pdf",
+    "https://www.dreamsongs.com/Files/IsWorseReallyBetter.pdf",
+    "https://www.goodreads.com/en/book/show/39996759-a-philosophy-of-software-design"
+  ],
+  "publicationLinks": [
+    "https://grugbrain.dev/"
+  ],
+  "images": [
+    {
+      "localPath": "/static/images/the-grug-brained-developer-01.png",
+      "sourceUrl": "https://grugbrain.dev/grug.png"
+    },
+    {
+      "localPath": "/static/images/the-grug-brained-developer-02.png",
+      "sourceUrl": "https://grugbrain.dev/over-time.png"
+    }
+  ],
+  "validation": {
+    "date": "2026-10-31",
+    "linkCount": 59,
+    "translatedBodyUnchanged": true,
+    "sourceUrlsPreserved": true
+  },
+  "publication": {
+    "postPath": "posts/the-grug-brained-developer.md",
+    "url": "https://www.yeongseo-blog.site/blog/the-grug-brained-developer",
+    "authorizedAt": "2026-10-31",
+    "note": "User explicitly authorized publication to main. Deployment verification is recorded after main update."
+  },
+  "fragmentLinks": [
+    "#grug-on-complexity",
+    "#grug-on-saying-no",
+    "#grug-on-saying-ok",
+    "#grug-on-factring-your-code",
+    "#grug-on-testing",
+    "#grug-on-agile",
+    "#grug-on-refactoring",
+    "#grug-on-chestertons-fence",
+    "#grug-on-microservices",
+    "#grug-on-tools",
+    "#grug-on-type-systems",
+    "#grug-on-expression-complexity",
+    "#grug-on-dry",
+    "#grug-on-soc",
+    "#grug-on-closures",
+    "#grug-on-logging",
+    "#grug-on-concurrency",
+    "#grug-on-optimizing",
+    "#grug-on-apis",
+    "#grug-on-parsing",
+    "#grug-on-visitor-pattern",
+    "#grug-on-front-end-development",
+    "#grug-on-fads",
+    "#grug-on-fold",
+    "#grug-on-imposter-syndrom",
+    "#grug-reads",
+    "#lol-lmao"
+  ]
+}

@@ -1,6 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import { visit } from "unist-util-visit";
 
 const [postArg, manifestArg] = process.argv.slice(2);
 if (!postArg || !manifestArg) {
@@ -52,7 +55,19 @@ if (!content.includes(manifest.source.author) || !/원저자[\s\S]{0,1000}(?:입
   fail("글 하단에 원저자 소개가 없습니다.");
 }
 
-const markdownUrls = [...content.matchAll(/\[[^\]]*\]\((https?:\/\/[^)\s]+)\)/g)].map((match) => match[1]);
+// Parse Markdown so parentheses inside URLs remain intact. Linked figures use
+// HTML anchors, which need to participate in the same source-link check.
+const document = unified().use(remarkParse).parse(content);
+const documentUrls = [];
+visit(document, "link", (node) => {
+  documentUrls.push(node.url);
+});
+visit(document, "html", (node) => {
+  for (const match of node.value.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/g)) {
+    documentUrls.push(match[1]);
+  }
+});
+const markdownUrls = documentUrls.filter((url) => /^https?:\/\//.test(url));
 const expectedBodyUrls = manifest.contentLinks ?? [];
 const actualBodyUrls = markdownUrls.filter((url) => url !== manifest.source.url && !(manifest.publicationLinks ?? []).includes(url));
 // Preserve repeated links in the source while still detecting missing or added occurrences.
@@ -63,6 +78,15 @@ const missing = [...expectedCounts].filter(([url, count]) => (actualCounts.get(u
 const extra = [...actualCounts].filter(([url, count]) => count > (expectedCounts.get(url) ?? 0)).map(([url]) => url);
 if (missing.length) fail(`누락된 원문 링크: ${missing.join(", ")}`);
 if (extra.length) fail(`원문에 없는 본문 링크: ${extra.join(", ")}`);
+
+if (manifest.fragmentLinks) {
+  const expectedFragments = countUrls(manifest.fragmentLinks);
+  const actualFragments = countUrls(documentUrls.filter((url) => url.startsWith("#")));
+  if ([...expectedFragments].some(([url, count]) => actualFragments.get(url) !== count) ||
+      [...actualFragments].some(([url, count]) => expectedFragments.get(url) !== count)) {
+    fail("원문과 내부 앵커 링크가 다릅니다.");
+  }
+}
 
 const images = [...content.matchAll(/<img\s+[^>]*src=["']([^"']+)["']/g)].map((match) => match[1]);
 for (const image of images) {
