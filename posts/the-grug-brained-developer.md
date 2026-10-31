@@ -30,7 +30,7 @@ tags: ["DEV", "Web", "translate"]
 
 어쨌든 어느 정도는 자유로운 나라고, 결국 그렇게 중요한 일도 아닙니다. 그래도 재미있게 읽고, 그루그가 오랜 개발 인생에서 저지른 수많은 실수에서 뭔가 배우면 좋겠습니다.
 
-# <a name="grug-on-complexity"></a>[영원한 적, 복잡성](#grug-on-complexity)
+# <a name="grug-on-complexity"></a>영원한 적, 복잡성
 
 그루그를 잡아먹는 최상위 포식자는 복잡성입니다.
 
@@ -62,7 +62,7 @@ tags: ["DEV", "Web", "translate"]
 
 그래서 그루그는 다시, 또 자주 말합니다. 복잡성은 *아주*, *아주* 나쁩니다.
 
-## <a name="grug-on-saying-no"></a>[아니요라고 말하기](#grug-on-saying-no)
+## <a name="grug-on-saying-no"></a>아니요라고 말하기
 
 복잡성의 악령에 맞서는 최고의 무기는 마법의 말, “아니요”입니다.
 
@@ -80,7 +80,7 @@ tags: ["DEV", "Web", "translate"]
 
 괜찮습니다. 어차피 그루그에게 반짝이는 돌이 얼마나 필요하겠습니까?
 
-## <a name="grug-on-saying-ok"></a>[알겠다고 말하기](#grug-on-saying-ok)
+## <a name="grug-on-saying-ok"></a>알겠다고 말하기
 
 가끔은 타협해야 합니다. 안 그러면 반짝이는 돌을 못 받고, 그러면 공룡 고기도 못 먹습니다. 좋지 않습니다. 아내는 집에 있는 어린 그루그들에게 지붕도, 먹을 것도 필요하다고 단호하게 일깨워 줍니다. 복잡성의 악령에 관한 그루그의 쉰 번째 불평에는 관심이 없습니다.
 
@@ -94,7 +94,7 @@ tags: ["DEV", "Web", "translate"]
 
 어차피 프로젝트 매니저에게도 이로운 일이니, 그루그는 보통 크게 죄책감을 느끼지 않습니다.
 
-## <a name="grug-on-factring-your-code"></a>[코드 나누기](#grug-on-factring-your-code)
+## <a name="grug-on-factring-your-code"></a>코드 나누기
 
 다음 전략은 훨씬 어렵습니다. 코드베이스를 잘 나누는 일입니다. 멋진 말로는 “코드를 적절히 분해하기(factoring)”입니다. 시스템마다 너무 달라서 일반적인 조언을 하기는 어렵습니다. 그래도 그루그가 믿게 된 한 가지는 있습니다. 애플리케이션을 너무 일찍 나누지 않습니다!
 
@@ -126,7 +126,7 @@ tags: ["DEV", "Web", "translate"]
 
 그루그는 소프트웨어를 만들 때 일찍 프로토타입을 만들라고 합니다. 큰 머리가 많다면 *특히* 그렇습니다.
 
-# <a name="grug-on-testing"></a>[테스트](#grug-on-testing)
+# <a name="grug-on-testing"></a>테스트
 
 그루그는 테스트를 사랑하면서도 미워합니다. 테스트는 셀 수 없이 많이 그루그를 구해 줬습니다. 그루그는 테스트를 사랑하고 존중합니다.
 
@@ -172,7 +172,7 @@ tags: ["DEV", "Web", "translate"]
 
 그루그가 싫어하는 “테스트부터”에도 예외는 하나 있습니다. 버그를 발견했을 때입니다. 그루그는 늘 회귀 테스트로 버그부터 재현하고, *그다음에* 고치려 합니다. 이상하게 이 경우만큼은 그 편이 더 잘됩니다.
 
-# <a name="grug-on-agile"></a>[애자일](#grug-on-agile)
+# <a name="grug-on-agile"></a>애자일
 
 그루그는 애자일이 끔찍하지도, 좋지도 않다고 생각합니다.
 
@@ -188,7 +188,7 @@ tags: ["DEV", "Web", "translate"]
 
 그루그는 애자일 주술사가 뭐라고 하든 모든 소프트웨어 문제를 해결해 줄 [은 몽둥이는 없다](https://en.wikipedia.org/wiki/No_Silver_Bullet)고 말합니다. 위험합니다!
 
-# <a name="grug-on-refactoring"></a>[리팩터링](#grug-on-refactoring)
+# <a name="grug-on-refactoring"></a>리팩터링
 
 리팩터링은 괜찮은 일이고, 좋은 선택일 때도 많습니다. 특히 프로젝트 후반에 코드가 자리를 잡았을 때 그렇습니다.
 
@@ -204,7 +204,7 @@ tags: ["DEV", "Web", "translate"]
 
 그루그가 다니던 회사에서 코드베이스의 복잡성의 악령을 관리하고 가두려고 [OSGi](https://www.techtarget.com/searchnetworking/definition/OSGi)를 도입한 일도 좋은 예입니다. OSGi는 도움이 안 됐을 뿐 아니라 악령을 훨씬 강하게 만들었습니다! 게다가 코드를 다시 짜느라 최고의 개발자들이 몇 년 치 공수까지 들였습니다! 악령은 더 강해지고, 이제 기능도 구현할 수 없습니다! 아주 나쁩니다!
 
-# <a name="grug-on-chestertons-fence"></a>[체스터턴의 울타리](#grug-on-chestertons-fence)
+# <a name="grug-on-chestertons-fence"></a>체스터턴의 울타리
 
 현명한 그루그 주술사 [체스터턴](https://en.wikipedia.org/wiki/G._K._Chesterton)은 이렇게 말했습니다.
 
@@ -222,13 +222,13 @@ tags: ["DEV", "Web", "translate"]
 
 이럴 때 테스트는 울타리를 왜 부수면 안 되는지 알려 주는 좋은 단서가 됩니다!
 
-# <a name="grug-on-microservices"></a>[마이크로서비스](#grug-on-microservices)
+# <a name="grug-on-microservices"></a>마이크로서비스
 
 그루그는 큰 머리들이 왜 시스템을 제대로 나누는 가장 어려운 문제에 네트워크 호출까지 더하는지 궁금합니다.
 
 그루그에게는 아주 혼란스럽습니다.
 
-# <a name="grug-on-tools"></a>[도구](#grug-on-tools)
+# <a name="grug-on-tools"></a>도구
 
 그루그는 도구를 좋아합니다. 도구와 감정 조절이 그루그와 공룡을 구분합니다! 도구는 그루그 대신 생각해 줍니다. 덕분에 그루그의 뇌만으로는 만들 수 없는 코드도 만듭니다. 언제나 마음이 놓입니다! 그루그는 새 환경에 가면 생산성을 높이려고 주변 도구를 익히는 데 시간을 씁니다. 도구를 2주 동안 익히면 개발 속도가 두 배가 되기도 합니다. 문서가 없어 직접 뒤지고 다른 개발자에게 도움을 청해야 할 때도 많습니다.
 
@@ -244,7 +244,7 @@ IDE의 코드 자동 완성 덕분에 모든 API를 외울 필요가 없습니�
 
 그루그는 도구 개선을 멈추지 말라고 합니다.
 
-# <a name="grug-on-type-systems"></a>[타입 시스템](#grug-on-type-systems)
+# <a name="grug-on-type-systems"></a>타입 시스템
 
 그루그는 프로그래밍을 쉽게 해 주는 타입 시스템을 아주 좋아합니다. 키보드에서 점을 눌렀을 때, 할 수 있는 일의 목록이 마법처럼 뜨는 순간에 가장 큰 가치를 느낍니다. 그루그에게는 이게 타입 시스템 가치의 90% 이상입니다.
 
@@ -264,7 +264,7 @@ IDE의 코드 자동 완성 덕분에 모든 API를 외울 필요가 없습니�
 
 타입 시스템의 가장 큰 가치는 언제나 여기서 나옵니다. 점을 누르면 그루그가 할 수 있는 일이 보입니다. 절대 잊지 않습니다!
 
-# <a name="grug-on-expression-complexity"></a>[표현식의 복잡성](#grug-on-expression-complexity)
+# <a name="grug-on-expression-complexity"></a>표현식의 복잡성
 
 그루그도 한때는 코드 줄 수를 최대한 줄이려고 했습니다. 이런 코드를 썼습니다.
 
@@ -294,7 +294,7 @@ IDE의 코드 자동 완성 덕분에 모든 API를 외울 필요가 없습니�
 
 그루그도 아직 첫 번째 예시 같은 코드를 쓰다가 후회할 때가 많습니다. 그래서 젊은 그루그를 탓하지 않습니다.
 
-# <a name="grug-on-dry"></a>[DRY](#grug-on-dry)
+# <a name="grug-on-dry"></a>DRY
 
 [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)는 “반복하지 말라(Don't Repeat Yourself)”는 뜻입니다. 대부분의 개발자에게 강한 영향력을 가진 격언입니다.
 
@@ -310,7 +310,7 @@ IDE의 코드 자동 완성 덕분에 모든 API를 외울 필요가 없습니�
 
 주의합니다! 뭐든 글자 그대로 받아들이는 개발자라면 그래프의 “작동하는가” 선을 너무 진지하게 보지 않길 바랍니다. 농담입니다.
 
-# <a name="grug-on-soc"></a>[관심사 분리(SoC)](#grug-on-soc)
+# <a name="grug-on-soc"></a>관심사 분리(SoC)
 
 [관심사 분리(Separation of Concerns, SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns)도 많은 개발자의 마음을 사로잡은 개념입니다. 시스템의 서로 다른 측면을 별도의 코드 영역으로 나누자는 생각입니다.
 
@@ -322,7 +322,7 @@ IDE의 코드 자동 완성 덕분에 모든 API를 외울 필요가 없습니�
 
 관심사를 나누면 버튼이 어떻게 작동하는지 이해하려고 온갖 파일을 이리저리 뒤져야 할 때가 많습니다. 아주 헷갈리고 시간도 낭비합니다. 나쁩니다!
 
-# <a name="grug-on-closures"></a>[클로저](#grug-on-closures)
+# <a name="grug-on-closures"></a>클로저
 
 그루그는 알맞은 일에 쓰는 클로저를 좋아합니다. 보통은 객체 컬렉션을 대상으로 하는 연산을 추상화하는 일입니다.
 
@@ -330,7 +330,7 @@ IDE의 코드 자동 완성 덕분에 모든 API를 외울 필요가 없습니�
 
 자바스크립트 개발자는 자바스크립트의 아주 특별한 복잡성의 악령을 “콜백 지옥”이라고 부릅니다. 자바스크립트 라이브러리에서 클로저를 너무 많이 쓴 탓입니다. 참 슬픕니다. 하지만 솔직히 말하면 자바스크립트 개발자가 자초한 일입니다.
 
-# <a name="grug-on-logging"></a>[로깅](#grug-on-logging)
+# <a name="grug-on-logging"></a>로깅
 
 그루그는 로깅을 아주 좋아하고 많이 하길 권합니다. 특히 클라우드에 배포한다면 그렇습니다. 그루그가 아닌 어떤 사람들은 로깅이 비싸고 중요하지 않다고 합니다. 그루그도 예전에는 그렇게 생각했습니다. 이제는 아닙니다.
 
@@ -353,7 +353,7 @@ IDE의 코드 자동 완성 덕분에 모든 API를 외울 필요가 없습니�
 
 그루그는 학교에서 로깅을 더 많이 가르치면 좋겠다고 생각합니다.
 
-# <a name="grug-on-concurrency"></a>[동시성](#grug-on-concurrency)
+# <a name="grug-on-concurrency"></a>동시성
 
 그루그는 제정신인 모든 개발자와 마찬가지로 동시성을 두려워합니다.
 
@@ -367,7 +367,7 @@ IDE의 코드 자동 완성 덕분에 모든 API를 외울 필요가 없습니�
 
 그루그는 [얼랭(Erlang)](https://en.wikipedia.org/wiki/Erlang_(programming_language))을 써 본 적은 없습니다. 좋은 이야기는 들었습니다. 하지만 그루그 눈에는 언어가 이상하게 생겼습니다. 미안합니다.
 
-# <a name="grug-on-optimizing"></a>[최적화](#grug-on-optimizing)
+# <a name="grug-on-optimizing"></a>최적화
 
 엄청나게 큰 머리 중에서도 가장 큰 머리를 가진 개발자가 말했습니다.
 
@@ -387,7 +387,7 @@ CPU에만 집중하지 않도록 조심합니다. CPU는 눈에 잘 들어오고
 
 복잡성의 악령이 미소 짓습니다.
 
-# <a name="grug-on-apis"></a>[API](#grug-on-apis)
+# <a name="grug-on-apis"></a>API
 
 그루그는 좋은 API를 좋아합니다. 좋은 API는 그루그를 너무 많이 생각하게 하지 않습니다.
 
@@ -434,7 +434,7 @@ CPU에만 집중하지 않도록 조심합니다. CPU는 눈에 잘 들어오고
 
 아무도 “스트림”에 관심 없습니다. 들어 본 적도 없습니다. 네트워킹 API도 아니지 않습니까. 자바 그루그는 다 리스트를 씁니다, 큰 머리 선생님!
 
-# <a name="grug-on-parsing"></a>[파싱](#grug-on-parsing)
+# <a name="grug-on-parsing"></a>파싱
 
 그루그는 틈만 나면 프로그래밍 언어 만들기를 좋아합니다. 파서를 만드는 가장 재미있고 아름다운 방법은 [재귀 하강(recursive descent)](https://en.wikipedia.org/wiki/Recursive_descent_parser)이라고 말합니다.
 
@@ -448,11 +448,11 @@ CPU에만 집중하지 않도록 조심합니다. CPU는 눈에 잘 들어오고
 
 책은 온라인에서 무료로 볼 수 있습니다. 그래도 관심 있는 그루그라면 책을 사길 강력히 권합니다. 그런 책은 사 주는 게 좋습니다. 큰 머리의 조언이 많이 담겨 있습니다. 그루그는 이 책을 *아주* 좋아합니다. 방문자 패턴(visitor pattern)만 빼고 말입니다. 함정입니다!
 
-# <a name="grug-on-visitor-pattern"></a>[방문자 패턴](#grug-on-visitor-pattern)
+# <a name="grug-on-visitor-pattern"></a>방문자 패턴
 
 [나쁩니다.](https://en.wikipedia.org/wiki/Visitor_pattern)
 
-# <a name="grug-on-front-end-development"></a>[프런트엔드 개발](#grug-on-front-end-development)
+# <a name="grug-on-front-end-development"></a>프런트엔드 개발
 
 그루그가 아닌 어떤 사람들은 웹 개발을 하게 되면 말합니다.
 
@@ -480,7 +480,7 @@ CPU에만 집중하지 않도록 조심합니다. CPU는 눈에 잘 들어오고
 
 취업에는 리액트가 낫고, 특정 유형의 애플리케이션에도 더 잘 맞습니다. 하지만 원하든 원하지 않든 복잡성의 악령을 섬기는 신도가 됩니다. 미안합니다. 프런트엔드 인생이란 그렇습니다.
 
-# <a name="grug-on-fads"></a>[유행](#grug-on-fads)
+# <a name="grug-on-fads"></a>유행
 
 개발에는 유행이 많습니다. 특히 요즘 프런트엔드 개발이 그렇습니다.
 
@@ -492,7 +492,7 @@ CPU에만 집중하지 않도록 조심합니다. CPU는 눈에 잘 들어오고
 
 새로운 방법을 배울 수 없다거나 좋은 새 아이디어가 없다는 말은 아닙니다. 하지만 나쁜 아이디어를 재활용하느라 시간을 많이 낭비하기도 합니다. 복잡성의 악령은 새 아이디어를 코드베이스에 마구 집어넣을 때 힘을 많이 얻습니다.
 
-# <a name="grug-on-fold"></a>[멍청해 보일까 봐 두려워하기](#grug-on-fold)
+# <a name="grug-on-fold"></a>멍청해 보일까 봐 두려워하기
 
 잘 듣습니다! 선배 그루그가 사람들 앞에서 “음, 이건 그루그한테 너무 복잡합니다”라고 말할 수 있다면 아주 좋습니다!
 
@@ -508,7 +508,7 @@ FOLD의 힘을 빼앗는 선배 그루그는 아주 훌륭합니다!
 
 이럴 때 가끔은 몽둥이도 쓸모가 있습니다. 하지만 보통은 유머 감각이 더 유용합니다. 특히 큰 머리가 마지막으로 실패한 프로젝트가 아주 유용합니다. 그런 이야기를 모아 두고 침착함을 유지합니다.
 
-# <a name="grug-on-imposter-syndrom"></a>[가면 증후군(Impostor Syndrome)](#grug-on-imposter-syndrom)
+# <a name="grug-on-imposter-syndrom"></a>가면 증후군(Impostor Syndrome)
 
 개발하다 보면 자기가 가짜처럼 느껴지는 일이 많습니다.
 
@@ -522,7 +522,7 @@ FOLD의 힘을 빼앗는 선배 그루그는 아주 훌륭합니다!
 
 여기까지 읽은 젊은 그루그라면 개발자로 잘 살아갈 가능성이 높습니다. 답답함과 걱정은 늘 있겠지만 말입니다. 미안합니다.
 
-# <a name="grug-reads"></a>[읽을거리](#grug-reads)
+# <a name="grug-reads"></a>읽을거리
 
 그루그는 이 글들을 좋아합니다.
 
@@ -531,7 +531,7 @@ FOLD의 힘을 빼앗는 선배 그루그는 아주 훌륭합니다!
 * [더 나쁜 것이 정말 더 나을까?](https://www.dreamsongs.com/Files/IsWorseReallyBetter.pdf)
 * [소프트웨어 설계의 철학](https://www.goodreads.com/en/book/show/39996759-a-philosophy-of-software-design)
 
-# <a name="lol-lmao"></a>[마치며](#lol-lmao)
+# <a name="lol-lmao"></a>마치며
 
 *여러분이* 말합니다. 복잡성은 *아주*, *아주* 나쁩니다.
 

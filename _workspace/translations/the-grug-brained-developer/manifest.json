@@ -84,9 +84,10 @@
   ],
   "validation": {
     "date": "2026-10-31",
-    "linkCount": 59,
+    "linkCount": 32,
     "translatedBodyUnchanged": true,
-    "sourceUrlsPreserved": true
+    "sourceUrlsPreserved": true,
+    "sourceLinkCount": 59
   },
   "publication": {
     "postPath": "posts/the-grug-brained-developer.md",
@@ -94,7 +95,8 @@
     "authorizedAt": "2026-10-31",
     "note": "User explicitly authorized publication to main. Deployment verification is recorded after main update."
   },
-  "fragmentLinks": [
+  "fragmentLinks": [],
+  "sourceFragmentLinks": [
     "#grug-on-complexity",
     "#grug-on-saying-no",
     "#grug-on-saying-ok",
@@ -122,5 +124,12 @@
     "#grug-on-imposter-syndrom",
     "#grug-reads",
     "#lol-lmao"
+  ],
+  "presentationAdjustments": [
+    {
+      "date": "2026-10-31",
+      "reason": "User requested plain section headings without self-links.",
+      "change": "Removed 27 heading self-links while preserving heading text, levels, and named anchors for existing fragment URLs."
+    }
   ]
 }
