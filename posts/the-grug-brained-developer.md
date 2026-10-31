@@ -2,12 +2,11 @@
 title: "[번역] 그루그 같은 뇌를 가진 개발자"
 date: "2026-10-31T00:00:00.000Z"
 tags: ["DEV", "Web", "translate"]
-draft: true
 ---
 
 > 이 글은 원저자 Carson Gross의 [The Grug Brained Developer](https://grugbrain.dev/)를 허락을 받아 번역한 글입니다.
 
-<figure><a href="https://www.redbubble.com/i/sticker/Programmer-Grug-by-colossalbreaker/42915272.EJUG5"><img src="/static/images/the-grug-brained-developer-01.png" alt="그루그" /></a></figure>
+<figure><a href="https://www.redbubble.com/i/sticker/Programmer-Grug-by-colossalbreaker/42915272.EJUG5"><img src="/static/images/the-grug-brained-developer-01.png" alt="그루그" style="height: 120px; width: auto" /></a></figure>
 
 자기 머리가 작다는 걸 아는 사람처럼 생각하기 위한 쉬운 안내서
 
